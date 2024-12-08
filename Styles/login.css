@@ -28,9 +28,10 @@ body {
     background-color: var(--supplement-color);
     width: 100px;
     height: 100px;
+    filter: blur(2px);
     transform: rotate(30deg);
     position: absolute;
-    left: 245px;
+    left: 20%;
     top: 65px;
     z-index: -1;
     opacity: 0.5;
@@ -42,8 +43,9 @@ body {
     width: 50px;
     height: 50px;
     transform: rotate(60deg);
+    filter: blur(2px);
     position: absolute;
-    left: 445px;
+    left: 40%;
     bottom: 15px;
     z-index: -1;
     opacity: 0.5;
