@@ -1,0 +1,150 @@
+            /******************* 1680px *******************/
+
+@media screen and (max-width: 1680px) {
+        
+    .container {
+        width: 1024px;
+        }
+}
+
+
+
+            /******************* 1280px *******************/
+
+@media screen and (max-width: 1280px) {
+    
+    .container {
+        width: 900px;
+    }
+}
+
+
+
+            /******************* 1024px *******************/
+
+@media screen and (max-width: 1024px) {
+    
+    .container {
+        width: 680px;
+    }
+}
+
+
+
+            /******************* 768px *******************/
+
+@media screen and (max-width: 768px) {
+    
+    .container {
+        width: 100%;
+    }
+    .header-background {
+        z-index: 0;
+        height: 150px;
+    }
+    .header {
+        position: absolute;
+        top: 150px;
+        z-index: 0;
+        height: 300px;
+        border-bottom: 1px solid var(--dark-color);
+    }
+    .navbar {
+        border-radius: 0px;
+        justify-content: space-evenly;
+        gap: 0;
+        font-size: 14px;
+    }
+    .category {
+        display: none;
+    }
+    .brand-name {
+        font-size: 40px;
+        color: var(--dark-color);
+    }
+    .header-tools {
+        flex-wrap: wrap;
+    }
+    .search-box {
+        width: 80%;
+    }
+    .search-input, .language-display {
+        background-color: var(--dark-color);
+        color: var(--light-color);
+    }
+    .Product-introduction-box {
+        display: none;
+    }
+    .buy-btn-box {
+        position: absolute;
+        top: -40%;
+        left: -30%;
+    }
+    .buy-now {
+        background-color: var(--light-color);
+        color: var(--dark-color);
+        width: 100px;
+        height: 25px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+    .login-logo, .shopping-cart-logo, .search-logo, .login-link, .shopping-cart-link {
+        color: var(--dark-color);
+    }
+    .language-selected, .language-angle {
+        color: var(--light-color);
+    }
+}
+
+
+
+            /******************* 450px *******************/
+
+@media screen and (max-width: 450px) {
+    
+    .container {
+
+    }
+    .header-background {
+        height: 100px;
+    }
+    .header {
+        top: 100px;
+        height: 200px;
+    }
+    .navbar {
+        display: none;
+    }
+    .mobile-navbar-box {
+        display: flex;
+    }
+    .brand-box {
+        margin-top: 0;
+    }
+    .brand-name {
+        display: none;
+    }
+    .login-cart-section {
+        display: none;
+    }
+    .search-input {
+        font-size: 16px;
+    }
+    .buy-now {
+        font-size: 10px;
+        width: 80px;
+        height: 15px;
+    }
+
+}
+
+
+
+            /******************* 300px *******************/
+
+@media screen and (max-width: 320px) {
+    
+    .container {
+
+    }
+}

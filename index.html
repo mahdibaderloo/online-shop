@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <script src="https://kit.fontawesome.com/6d9cc78e8f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Styles/reset.css">
+    <link rel="stylesheet" href="Styles/font.css">
+    <link rel="stylesheet" href="Styles/app.css">
+    <link rel="stylesheet" href="Styles/responsive.css">
+</head>
+<body>
+    
+    <!----------- Header Background ------------->
+    <div class="header-background">
+        <img src="Images/241028_GiftGuideKids_GS_desktop.webp" alt="Header background img" class="header-background_img">
+    </div>
+    <!-------------- Mobile Navbar --------------->
+    <ul class="mobile-navbar">
+        <div class="navbar-top">
+            <p class="brand-mobile-nav">Online Shop</p>
+            <i class="close-nav fa fa-close"></i>
+        </div>
+        <li class="mobile-nav-item">
+            <a href="login.html" class="mobile-nav-link">Login</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="shopping-cart.html" class="mobile-nav-link">Shopping cart</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="" class="mobile-nav-link">Help</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="" class="mobile-nav-link">Blog</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="" class="mobile-nav-link">Contact Us</a>
+        </li>
+    </ul>
+                        <!---------------- Up Button ---------------->
+    <div class="up-button-box">
+        <i class="up-button fa fa-arrow-up"></i>
+    </div>
+
+    <div class="container">
+                        <!----------------- Header ------------------>
+        <header class="header">
+
+            <div class="header-items">
+                        <!----------------- Navbar ------------------>
+                <ul class="navbar">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active-btn">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link category">Category <i class="category-angle fa fa-angle-down"></i></a>
+                        <ul class="category-items">
+                            <li class="category-item">
+                                <a href="" class="category-link">Men</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">Women</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">Kids</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">Shoes</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">Accessory</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">Hat</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">Clothes</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">Glasses</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+                        <!-------------- Mobile Navbar Box --------------->
+                    <div class="mobile-navbar-box">
+                        <img class="burger-menu" src="Images/burger-menu.svg" alt="">
+                        <p class="brand">Online Shop</p>
+                        <a href="index.html" class="nav-link active-btn">Home</a>
+                    </div>
+                        <!--------------- Brand Name ----------------->
+                <div class="brand-box">
+                    <h1 class="brand-name">Online Shop</h1>
+                </div>
+
+                        <!-------------- Header Tools ---------------->
+                <div class="header-tools">
+                        <!----------------- Search ------------------->
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search Products...">
+                        <button class="search-submit">
+                            <i class="search-logo fa fa-search"></i>
+                        </button>
+                    </div>
+                            <!----------------- Language ----------------->
+                        <div class="language-box">
+                            <div class="language-display">
+                                <p class="language-selected">English</p>
+                                <i class="language-angle fa fa-angle-down" id="language-angle"></i>
+                            </div>
+                            <ul class="language-options">
+                                <li class="language">
+                                    <a href="#" class="language-link active-language" data-language="English">English</a>
+                                    <img class="flag" src="Images/UK-flag.webp" alt="Flag">
+                                </li>
+                                <li class="language">
+                                    <a href="#" class="language-link" data-language="Persian">Persian</a>
+                                    <img class="flag" src="Images/Iran-flag.webp" alt="Flag">
+                                </li>
+                            </ul>
+                        </div>
+                        <!----------------- Log In ------------------->
+                        <div class="login-cart-section">
+                            <div class="login-box">
+                                <i class="login-logo fa fa-user-alt"></i>
+                                <a href="login.html" class="login-link">login</a>
+                            </div>
+                            <!-------------- Shopping Cart --------------->
+                            <div class="shopping-cart-box">
+                                <i class="shopping-cart-logo fa fa-shopping-cart"></i>
+                                <a href="shopping-cart.html" class="shopping-cart-link">cart</a>
+                            </div>
+                        </div>
+                    </div>
+                        <!----------- Product Introduction ----------->
+                <div class="Product-introduction-box">
+                    <h1 class="product-introduction">New Shoes ;)</h1>
+                </div>
+                        <!----------------- Buy Now ------------------>
+                <div class="buy-btn-box">
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+
+        </header>
+
+
+        
+        <div class="box"></div>
+
+    </div>
+
+
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/change-language.js"></script>
+
+</body>
+</html>

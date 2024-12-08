@@ -1,0 +1,182 @@
+:root {
+    --dark-color: #101011;
+    --supplement-color: #caa016;
+    --main-font: 'SourGummy-Medium';
+    --light-color: #fff;
+}
+
+body {
+    background-color: #3e3e3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: var(--main-font);
+    overflow: hidden;
+}
+
+.container {
+    background-color: var(--light-color);
+    width: 700px;
+    height: 450px;
+    display: flex;
+    gap: 1rem;
+    border-radius: 25px;
+}
+
+.bubble {
+    background-color: var(--supplement-color);
+    width: 100px;
+    height: 100px;
+    transform: rotate(30deg);
+    position: absolute;
+    left: 245px;
+    top: 65px;
+    z-index: -1;
+    opacity: 0.5;
+    border-radius: 15px;
+}
+
+.bubble2 {
+    background-color: var(--supplement-color);
+    width: 50px;
+    height: 50px;
+    transform: rotate(60deg);
+    position: absolute;
+    left: 445px;
+    bottom: 15px;
+    z-index: -1;
+    opacity: 0.5;
+    border-radius: 15px;
+}
+
+
+
+/******************* Left *******************/
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    padding-top: 3rem;
+}
+
+.login-title {
+    font-size: 30px;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.username-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    height: 20px;
+}
+
+.username-icon, .password-icon {
+    width: 20px;
+}
+
+.username-input, .password-input {
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: var(--main-font);
+    font-size: 16px;
+    margin-left: 0.5rem;
+
+}
+
+.password-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    margin-bottom: 2rem;
+}
+
+.login-now {
+    border: none;
+    background-color: var(--supplement-color);
+    font-family: var(--main-font);
+    padding: 10px 15px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.suggestion-way {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-size: 14px;
+}
+
+.colorless {
+    color: #3e3e3e;
+    font-weight: normal;
+}
+
+.google-login-box, .facebook-login-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.google-logo, .facebook-logo {
+    width: 20px;
+}
+
+.google-link, .facebook-link {
+    font-size: 14px;
+    color: #3e3e3e;
+}
+
+.bold {
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+
+
+/******************* Right *******************/
+
+.right {
+    background-color: var(--supplement-color);
+    width: 40%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    height: 100%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.clothes-icon {
+    width: 275px;
+}
+
+.back-to-shop-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    padding: 20px;
+}
+
+.back-icon {
+
+}
+
+.back-link {
+    color: var(--dark-color);
+}
