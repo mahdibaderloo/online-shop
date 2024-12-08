@@ -86,7 +86,6 @@ body {
     height: 350px;
     width: 600px;
     gap: 20px;
-    padding: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -94,7 +93,8 @@ body {
 .cart-item {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-right: 10px;
 }
 
 .product-content {
