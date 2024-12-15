@@ -16,7 +16,7 @@ body {
     display: flex;  
     justify-content: center;
     overflow-x: hidden;
-
+    background-color: #1e1e1e;
 }
 
 .container {
@@ -453,10 +453,93 @@ body {
 
 
 
-/*********************  ********************/
+/********************* Main ********************/
 
-.box {
-    height: 2500px;
+.main {
+
+}
+
+
+
+/********************* Hint Box ********************/
+
+.hint-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.hint-title {
+    color: var(--light-color);
+    letter-spacing: 2px;
+}
+
+.hint-icon {
+    color: var(--supplement-color);
+    font-size: 14px;
+}
+
+
+
+/********************* Products ********************/
+
+.products {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.product {
+    width: 20%;
+    box-shadow: 0 0 3px var(--light-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    color: var(--light-color);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.product-title {
+
+}
+
+.product-image {
+    width: 90%;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 2px var(--light-color);
+    cursor: pointer;
+}
+
+.product-price {
+
+}
+
+.add-to-cart {
+    box-shadow: 0 0 2px var(--light-color);
+    border: none;
+    border-radius: 10px;
     width: 100%;
-    background-color: var(--dark-color);
+    height: 40px;
+    font-family: var(--main-font);
+    background-color: transparent;
+    color: var(--light-color);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    box-shadow: 0 0 2px var(--supplement-color);
+    color: var(--supplement-color);
 }
