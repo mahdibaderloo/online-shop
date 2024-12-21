@@ -284,6 +284,7 @@ body {
     background-color: var(--light-color);
     cursor: pointer;
     border-radius: 12px;
+    user-select: none;
 }
 
 .language-selected {
@@ -302,6 +303,8 @@ body {
     gap: 15px;
     padding: 5px;
     display: none;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
 }
 
 .language {
@@ -552,7 +555,7 @@ body {
     margin-top: 4rem;
 }
 
-.category {
+.category-section-item {
     width: 200px;
     height: 200px;
     overflow: hidden;
