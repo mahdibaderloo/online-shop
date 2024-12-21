@@ -21,6 +21,9 @@ languageDisplay.addEventListener('click', () => {
 function openLanguageBox () {
     languageAngle.style.transform = 'rotate(180deg)'
     languageOptions.style.display = 'flex'
+
+    languageDisplay.style.borderBottomRightRadius = '0px'
+    languageDisplay.style.borderBottomLeftRadius = '0px'
 }
 
 function selectLanguage (data) {
@@ -35,6 +38,9 @@ function selectLanguage (data) {
 function closeLanguageBox () {
     languageAngle.style.transform = 'rotate(0deg)'
     languageOptions.style.display = 'none'
+
+        languageDisplay.style.borderBottomRightRadius = '12px'
+    languageDisplay.style.borderBottomLeftRadius = '12px'
 }
 
 languageLinks.forEach( item => {
