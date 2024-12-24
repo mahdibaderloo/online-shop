@@ -493,7 +493,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 0.5rem;
 }
 
 .product {
@@ -521,6 +521,7 @@ body {
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 4px var(--dark-color);
+    background-color: #d6d6d6;
     cursor: pointer;
 }
 
@@ -581,9 +582,69 @@ body {
     margin: 4rem 0;
     width: 100%;
     height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .banner {
     width: 100%;
     height: 100%;
+}
+
+
+
+/********************* Bestsellers Products ********************/
+
+.bestsellers-products {
+    margin: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.bestseller-product {
+    width: 15%;
+    box-shadow: 0 0 4px var(--light-color);
+    background-color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    color: var(--dark-color);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.bestseller-title {
+    color: var(--light-color);
+}
+
+.bestseller-image {
+    width: 80%;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 4px var(--light-color);
+    background-color: #dadada;
+    cursor: pointer;
+}
+
+.bestseller-price {
+    color: var(--light-color);
+    text-shadow: 1px 1px 2px var(--dark-color);
+}
+
+.bestseller-btn {
+    box-shadow: 0 0 6px var(--light-color);
+    color: var(--light-color);
+}
+
+.bestseller-btn:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    box-shadow: 0 0 4px var(--light-color);
 }
