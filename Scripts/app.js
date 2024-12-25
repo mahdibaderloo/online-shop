@@ -13,19 +13,19 @@ const upBtn = document.querySelector('.up-button-box')
 // Category //
 
 function categoryItemsOpen () {
-    categoryItems.style.display = 'flex'
+    categoryItems.style.opacity = '1'
     categoryAngle.style.transform = 'rotate(180deg)'
 }
 
 function categoryItemsClose () {
-    categoryItems.style.display = 'none'
+    categoryItems.style.opacity = '0'
     categoryAngle.style.transform = 'rotate(0deg)'
 }
 
 categoryBtn.addEventListener('click', event => {
     event.preventDefault()
     
-    if (categoryItems.style.display === 'none') {
+    if (categoryItems.style.opacity === '0') {
         categoryItemsOpen()
     } else {
         categoryItemsClose()
