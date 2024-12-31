@@ -301,7 +301,7 @@ body {
 }
 
 .language-angle {
-    
+    transition: all 0.2s ease;
 }
 
 .language-options {
@@ -315,7 +315,7 @@ body {
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
     transition: all 0.3s ease;
-    opacity: 0;
+    pointer-events: none;
 }
 
 .language {
