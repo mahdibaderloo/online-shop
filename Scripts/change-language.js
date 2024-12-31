@@ -10,8 +10,8 @@ const languageLinks = document.querySelectorAll('.language-link')
 //  User's chosen language //
 
 languageDisplay.addEventListener('click', () => {
-
-    if (languageOptions.style.display === 'none') {
+    
+    if (languageOptions.style.opacity == '0') {
         openLanguageBox()
     } else {
         closeLanguageBox()
@@ -20,7 +20,7 @@ languageDisplay.addEventListener('click', () => {
 
 function openLanguageBox () {
     languageAngle.style.transform = 'rotate(180deg)'
-    languageOptions.style.display = 'flex'
+    languageOptions.style.opacity = '1'
 
     languageDisplay.style.borderBottomRightRadius = '0px'
     languageDisplay.style.borderBottomLeftRadius = '0px'
@@ -37,9 +37,9 @@ function selectLanguage (data) {
 
 function closeLanguageBox () {
     languageAngle.style.transform = 'rotate(0deg)'
-    languageOptions.style.display = 'none'
+    languageOptions.style.opacity = '0'
 
-        languageDisplay.style.borderBottomRightRadius = '12px'
+    languageDisplay.style.borderBottomRightRadius = '12px'
     languageDisplay.style.borderBottomLeftRadius = '12px'
 }
 

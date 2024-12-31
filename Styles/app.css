@@ -83,7 +83,7 @@ body {
 
 
 
-/********************* Navbar *********************/
+/********************* Up Button *********************/
 
 .up-button-box {
     background-color: var(--supplement-color);
@@ -104,6 +104,8 @@ body {
 .up-button {
     color: var(--light-color);
 }
+
+
 
 /********************* Navbar *********************/
 
@@ -129,6 +131,10 @@ body {
     color: var(--light-color);
 }
 
+.nav-logo {
+    width: 40px;
+}
+
 .category-angle {
     font-size: 14px;
     transition: all 0.2s ease;
@@ -136,7 +142,7 @@ body {
 }
 
 .category-items {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     gap: 20px;
@@ -149,6 +155,7 @@ body {
     position: absolute;
     top: 50px;
     transition: all 0.3s ease;
+    opacity: 0;
 }
 
 .category-item {
@@ -195,10 +202,8 @@ body {
     margin-bottom: 2rem;
 }
 
-.brand-mobile-nav {
-    font-size: 30px;
-    font-weight: bold;
-    color: var(--supplement-color);
+.brand-mobile {
+    width: 15%;
 }
 
 .close-nav {
@@ -224,6 +229,9 @@ body {
     transition: all 0.3s ease;
 }
 
+.brand-mobile-nav {
+    width: 40%;
+}
 
 .mobile-nav-item {
     list-style-type: none;
@@ -235,7 +243,7 @@ body {
 }
 
 
-/******************* Brand Name *******************/
+/******************* Brand Logo *******************/
 
 .brand-box {
     width: 100%;
@@ -244,9 +252,9 @@ body {
     margin-top: 2rem;
 }
 
-.brand-name {
-    color: var(--light-color);
-    font-size: 50px;
+.brand-logo {
+    fill: var(--supplement-color);
+    width: 10%;
     font-family: 'SourGummy-Bold';
 }
 
@@ -260,7 +268,7 @@ body {
     /* align-items: center; */
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 
@@ -285,26 +293,29 @@ body {
     cursor: pointer;
     border-radius: 12px;
     user-select: none;
+    transition: all 0.2s ease;
 }
 
 .language-selected {
-
+    
 }
 
 .language-angle {
-    transition: all 0.2s ease;
+    
 }
 
 .language-options {
     width: 100%;
     background-color: var(--dark-color);
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     padding: 5px;
-    display: none;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
+    transition: all 0.3s ease;
+    opacity: 0;
 }
 
 .language {
@@ -493,11 +504,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .product {
-    width: 20%;
+    width: 18%;
     box-shadow: 0 0 4px var(--light-color);
     background-color: var(--light-color);
     display: flex;
@@ -512,12 +523,16 @@ body {
     transition: all 0.3s ease;
 }
 
+.product:hover {
+    transform: scale(1.04);
+}
+
 .product-title {
 
 }
 
 .product-image {
-    width: 90%;
+    width: 85%;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 4px var(--dark-color);
@@ -557,8 +572,8 @@ body {
 }
 
 .category-section-item {
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -589,6 +604,11 @@ body {
 .banner {
     width: 100%;
     height: 100%;
+    transition: all 0.3s ease;
+}
+
+.banner:hover {
+    filter: invert();
 }
 
 
@@ -601,7 +621,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 2rem;
 }
 
 .bestseller-product {
@@ -618,6 +638,10 @@ body {
     color: var(--dark-color);
     font-size: 20px;
     transition: all 0.3s ease;
+}
+
+.bestseller-product:hover {
+    transform: scale(1.04);
 }
 
 .bestseller-title {
@@ -647,4 +671,37 @@ body {
     background-color: var(--light-color);
     color: var(--dark-color);
     box-shadow: 0 0 4px var(--light-color);
+}
+
+
+
+/********************* Why We ********************/
+
+.why-we-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+.reason {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 44%;
+    background-color: #9e9e9e;
+    padding: 20px;
+    gap: 1rem;
+    border-radius: 15px;
+}
+
+.reason-img {
+    width: 20%;
+}
+
+.reason-title {
+    font-size: 18px;
 }
