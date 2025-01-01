@@ -14,7 +14,8 @@ body {
     height: 100vh;
     font-family: var(--main-font);
     display: flex;  
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
     background-color: #1e1e1e;
 }
@@ -301,7 +302,7 @@ body {
 }
 
 .language-angle {
-    
+    transition: all 0.2s ease;
 }
 
 .language-options {
@@ -315,7 +316,7 @@ body {
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
     transition: all 0.3s ease;
-    opacity: 0;
+    pointer-events: none;
 }
 
 .language {
@@ -704,4 +705,148 @@ body {
 
 .reason-title {
     font-size: 18px;
+}
+
+
+
+/********************* Footer ********************/
+
+.footer {
+    margin-top: 4rem;
+    width: 100%;
+    background-color: var(--dark-color);
+}
+
+
+
+/********************* Footer Container ********************/
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+.footer-logo {
+    width: 150px;
+}
+
+
+
+/********************* contact-information ********************/
+
+.contact-information {
+    width: 100%;
+    display: flex;
+    gap: 5rem;
+    /* margin: 1rem; */
+}
+
+.contact-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon {
+    width: 30px;
+}
+
+.contact-label {
+    color: #9e9e9e;
+    text-decoration: none;
+}
+
+.line {
+    margin-top: 2rem;
+    background-color: #9e9e9e71;
+    width: 100%;
+    height: 1px;
+}
+
+
+
+/********************* About And Links ********************/
+
+.about-and-links {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+}
+
+
+/********************* About Us ********************/
+
+.about-us , .footer-links-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 40%;
+}
+
+.about-title , .links-title {
+    color: var(--light-color);
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.about-description {
+    margin-top: 1rem;
+    color: #9e9e9e;
+    line-height: 1.4;
+}
+
+
+
+/********************* Footer Links ********************/
+
+.links-title {
+
+}
+
+.footer-links {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.link-item {
+    list-style-type: none;
+}
+
+.link {
+    text-decoration: none;
+    color: #9e9e9e;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    color: var(--supplement-color);
+}
+
+
+
+/********************* Copyright ********************/
+
+.copyright-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #9e9e9e;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+.copyright {
+
+}
+
+.developer {
+
 }
