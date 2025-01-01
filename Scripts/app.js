@@ -70,7 +70,7 @@ window.addEventListener('scroll', () => {
     console.log(window.scrollY)
     if (window.scrollY >= 295) {
         mobileNavbarBox.style.position = 'fixed'
-        upBtn.style.bottom = '1rem'
+        upBtn.style.bottom = '2rem'
     } else {
         mobileNavbarBox.style.position = 'unset'
         upBtn.style.bottom = '-3rem'
