@@ -35,7 +35,6 @@ body {
 .container {
     background-color: var(--light-color);
     width: 900px;
-    height: 500px;
     padding: 40px;
     display: flex;
     gap: 1rem;
@@ -72,6 +71,7 @@ body {
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
+    gap: 2rem;
 }
 
 .cart-title {
