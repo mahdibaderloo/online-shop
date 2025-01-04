@@ -163,6 +163,13 @@ body {
     border-bottom-right-radius: 25px;
 }
 
+.right-persian {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
 .clothes-icon {
     width: 275px;
 }
