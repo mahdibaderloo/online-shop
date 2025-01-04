@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <script src="https://kit.fontawesome.com/6d9cc78e8f.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="Images/main-logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="Styles/owl.carousel.min.css">
+    <link rel="stylesheet" href="Styles/owl.theme.default.min.css">
+    <link rel="stylesheet" href="Styles/reset.css">
+    <link rel="stylesheet" href="Styles/font.css">
+    <link rel="stylesheet" href="Styles/app.css">
+    <link rel="stylesheet" href="Styles/responsive.css">
+</head>
+<body style="font-family: 'Segoe UI'">
+    
+                        <!----------- Header Background ------------->
+    <div class="header-background">
+        <img src="Images/241028_GiftGuideKids_GS_desktop.webp" alt="Header background img" class="header-background_img">
+    </div>
+                        <!-------------- Mobile Navbar --------------->
+    <ul class="mobile-navbar">
+        <div class="navbar-top">
+            <img class="brand-mobile-nav" src="Images/main-logo.svg" alt="">
+            <i class="close-nav fa fa-close"></i>
+        </div>
+        <li class="mobile-nav-item">
+            <a href="login.html" class="mobile-nav-link">ورود</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="shopping-cart.html" class="mobile-nav-link">سبد خرید</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="" class="mobile-nav-link">راهنمایی</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="" class="mobile-nav-link">وبلاگ</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="" class="mobile-nav-link">تماس با ما</a>
+        </li>
+    </ul>
+                        <!---------------- Up Button ---------------->
+    <div class="up-button-box">
+        <i class="up-button fa fa-arrow-up"></i>
+    </div>
+
+    <div class="container">
+                        <!----------------- Header ------------------>
+        <header class="header">
+
+            <div class="header-items">
+                        <!----------------- Navbar ------------------>
+                <ul class="navbar">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active-btn">خانه</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <img class="nav-logo" src="Images/main-logo.svg" alt="">
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="" class="nav-link category">دسته بندی <i class="category-angle fa fa-angle-down"></i></a>
+                        <ul class="category-items">
+                            <li class="category-item">
+                                <a href="" class="category-link">آقایان</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">بانوان</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">بچه گانه</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">کفش</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">اکسسوری</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">کلاه</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">لباس</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="" class="category-link">عینک</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">راهنمایی</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">وبلاگ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">تماس با ما</a>
+                    </li>
+                </ul>
+                        <!-------------- Mobile Navbar Box --------------->
+                    <div class="mobile-navbar-box">
+                        <img class="burger-menu" src="Images/burger-menu.svg" alt="">
+                        <img class="brand-mobile" src="Images/main-logo.svg" alt="">
+                        <a href="index.html" class="nav-link active-btn">خانه</a>
+                    </div>
+                        <!--------------- Brand Logo ----------------->
+                <div class="brand-box">
+                    <!-- <img class="brand-logo" src="Images/main-logo.svg" alt=""> -->
+                </div>
+
+                        <!-------------- Header Tools ---------------->
+                <div class="header-tools">
+                        <!----------------- Search ------------------->
+                    <div class="search-box">
+                        <button class="search-submit">
+                            <i class="search-logo fa fa-search"></i>
+                        </button>
+                        <input type="text" class="search-input" placeholder="جستجوی محصولات...">
+                    </div>
+                            <!----------------- Language ----------------->
+                        <div class="language-box">
+                            <div class="language-display">
+                                <p class="language-selected">فارسی</p>
+                                <i class="language-angle fa fa-angle-down" id="language-angle"></i>
+                            </div>
+                            <ul class="language-options" style="opacity: 0;">
+                                <li class="language">
+                                    <a href="#" class="language-link active-language" data-language="English">انگلیسی</a>
+                                    <img class="flag" src="Images/UK-flag.webp" alt="Flag">
+                                </li>
+                                <li class="language">
+                                    <a href="#" class="language-link" data-language="Persian">فارسی</a>
+                                    <img class="flag" src="Images/Iran-flag.webp" alt="Flag">
+                                </li>
+                            </ul>
+                        </div>
+                        <!----------------- Log In ------------------->
+                        <div class="login-cart-section">
+                            <div class="login-box">
+                                <i class="login-logo fa fa-user-alt"></i>
+                                <a href="login.html" class="login-link">ورود</a>
+                            </div>
+                            <!-------------- Shopping Cart --------------->
+                            <div class="shopping-cart-box">
+                                <i class="shopping-cart-logo fa fa-shopping-cart"></i>
+                                <a href="shopping-cart.html" class="shopping-cart-link">سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                        <!----------- Product Introduction ----------->
+                <div class="Product-introduction-box">
+                    <h1 class="product-introduction">انواع کفش ;)</h1>
+                </div>
+                        <!----------------- Buy Now ------------------>
+                <div class="buy-btn-box">
+                    <button class="buy-now">خرید</button>
+                </div>
+            </div>
+
+        </header>
+                        <!----------------- Main ------------------>
+        <main class="main">
+                        <!----------------- Hint Box ------------------>
+            <div class="hint-box">
+                <i class="fas fa-angle-double-down hint-icon"></i>
+                <p class="hint-title">محصولات</p>
+                <i class="fas fa-angle-double-down hint-icon"></i>
+            </div>
+                        <!----------------- Products ------------------>
+            <ul class="products">
+                <li class="product">
+                    <p class="product-title">پیراهن</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">۲۳۰۰۰۰</p>
+                    <button style="font-family: 'Segoe UI'" class="add-to-cart">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+                <li class="product">
+                    <p class="product-title">Shirt</p>
+                    <img src="Images/shirt.png" alt="Product Image" class="product-image">
+                    <p class="product-price">23$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>
+                                
+                </li>
+            </ul>
+                        <!----------------- Hint Box ------------------>
+            <div class="hint-box">
+                <i class="fas fa-angle-double-down hint-icon"></i>
+                <p class="hint-title">دسته بندی</p>
+                <i class="fas fa-angle-double-down hint-icon"></i>
+            </div>
+                        <!----------------- Category Section ------------------>
+            <ul dir="ltr" class="owl-carousel categories-section">
+                <li class="category-section-item">
+                    <img src="Images/photo_2024-11-20_00-03-22.jpg" class="category-img" alt="">
+                    <p class="category-title">آقایان</p>
+                </li>
+                <li class="category-section-item">
+                    <img src="Images/photo_2024-11-20_00-03-22.jpg" class="category-img" alt="">
+                    <p class="category-title">بانوان</p>
+                </li>
+                <li class="category-section-item">
+                    <img src="Images/photo_2024-11-20_00-03-22.jpg" class="category-img" alt="">
+                    <p class="category-title">بچه گانه</p>
+                </li>
+                <li class="category-section-item">
+                    <img src="Images/photo_2024-11-20_00-03-22.jpg" class="category-img" alt="">
+                    <p class="category-title">کفش</p>
+                </li>
+                <li class="category-section-item">
+                    <img src="Images/photo_2024-11-20_00-03-22.jpg" class="category-img" alt="">
+                    <p class="category-title">اکسسوری</p>
+                </li>
+                <li class="category-section-item">
+                    <img src="Images/photo_2024-11-20_00-03-22.jpg" class="category-img" alt="">
+                    <p class="category-title">کلاه</p>
+                </li>
+                <li class="category-section-item">
+                    <img src="Images/photo_2024-11-20_00-03-22.jpg" class="category-img" alt="">
+                    <p class="category-title">لباس</p>
+                </li>
+                <li class="category-section-item">
+                    <img src="Images/photo_2024-11-20_00-03-22.jpg" class="category-img" alt="">
+                    <p class="category-title">عینک</p>
+                </li>
+            </ul>
+                        <!----------------- Hint Box ------------------>
+            <div class="hint-box">
+                <i class="fas fa-angle-double-down hint-icon"></i>
+                <p class="hint-title">پیشنهاد ویژه %</p>
+                <i class="fas fa-angle-double-down hint-icon"></i>
+            </div>
+                        <!----------------- Banner ------------------>
+            <div class="banner-box">
+                <img class="banner" src="Images/banner.jpg" alt="">
+            </div>
+                        <!----------------- Hint Box ------------------>
+            <div class="hint-box">
+                <i class="fas fa-angle-double-down hint-icon"></i>
+                <p class="hint-title">پرفروش ها</p>
+                <i class="fas fa-angle-double-down hint-icon"></i>
+            </div>
+                        <!----------------- Bestsellers ------------------>
+            <ul class="bestsellers-products">
+                <li class="bestseller-product">
+                    <p class="bestseller-title">کفش</p>
+                    <img src="Images/shoes.png" alt="Product Image" class="bestseller-image">
+                    <p class="bestseller-price">۴۵۰۰۰۰</p>
+                    <button style="font-family: 'Segoe UI'" class="add-to-cart bestseller-btn">خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                </li>
+                <li class="bestseller-product">
+                    <p class="bestseller-title">Shoes</p>
+                    <img src="Images/shoes.png" alt="Product Image" class="bestseller-image">
+                    <p class="bestseller-price">20$</p>
+                    <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                </li>
+                <li class="bestseller-product">
+                    <p class="bestseller-title">Shoes</p>
+                    <img src="Images/shoes.png" alt="Product Image" class="bestseller-image">
+                    <p class="bestseller-price">20$</p>
+                    <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                </li>
+                <li class="bestseller-product">
+                    <p class="bestseller-title">Shoes</p>
+                    <img src="Images/shoes.png" alt="Product Image" class="bestseller-image">
+                    <p class="bestseller-price">20$</p>
+                    <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                </li>
+            </ul>
+                        <!----------------- Hint Box ------------------>
+            <div class="hint-box">
+                <i class="fas fa-angle-double-down hint-icon"></i>
+                <p class="hint-title">چرا ما بهترینیم ؟</p>
+                <i class="fas fa-angle-double-down hint-icon"></i>
+            </div>
+                        <!----------------- Why We ------------------>
+            <ul class="why-we-container">
+                <li class="reason" style="justify-content: right;">
+                    <img src="Images/original.svg" alt="" class="reason-img">
+                    <p class="reason-title">ضمانت اصالت کالا</p>
+                </li>
+                <li class="reason" style="justify-content: right;">
+                    <img src="Images/price.svg" alt="" class="reason-img">
+                    <p class="reason-title">مقرون به صرفه ترین قیمت</p>
+                </li>
+                <li class="reason" style="justify-content: right;">
+                    <img src="Images/tick.svg" alt="" class="reason-img">
+                    <p class="reason-title">خرید اینترنتی و حضوری</p>
+                </li>
+                <li class="reason" style="justify-content: right;">
+                    <img src="Images/delivery.svg" alt="" class="reason-img">
+                    <p class="reason-title">ارسال سریع</p>
+                </li>
+            </ul>
+
+        </main>
+
+    </div>
+        
+        <!----------------- Footer ------------------>
+    <footer class="footer"> 
+        <!------------ Footer Container -------------->
+        <div class="footer-container">
+            <img src="Images/main-logo.svg" alt="main logo" class="footer-logo">
+        <!------------ contact-information ------------->
+            <ul class="contact-information">
+                <li class="contact-item">
+                    <img src="Images/phone.svg" alt="" class="contact-icon">
+                    <a href="tel:09000000000" class="contact-label">09000000000</a>
+                </li>
+                <li class="contact-item">
+                    <img src="Images/email.svg" alt="" class="contact-icon">
+                    <a href="mailto:mahdi.baderloo.230@gmail.com" class="contact-label">Support@gmail.com</a>
+                </li>
+                <li class="contact-item">
+                    <img src="Images/map.svg" alt="" class="contact-icon">
+                    <a href="https://www.google.com/maps" class="contact-label">آدرس</a>
+                </li>
+            </ul>
+            <div class="line"></div>
+        <!------------ About And Links ------------->
+            <div class="about-and-links">
+        <!------------ About Us ------------->
+                <div class="about-us">
+                    <h3 class="about-title">درباره فروشگاه اینترنتی</h3>
+                    <p class="about-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،</p>
+                </div>
+        <!------------ Footer Links ------------->
+                <div class="footer-links-box">
+                    <p class="links-title">دسترسی سریع</p>
+                    <ul class="footer-links">
+                        <li class="link-item">
+                            <a href="shopping-cart.html" class="link">سبد خرید</a>
+                        </li>
+                        <li class="link-item">
+                            <a href="login.html" class="link">ورود</a>
+                        </li>
+                        <li class="link-item">
+                            <a href="" class="link">راهنمایی</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <!------------ Copyright ------------->
+            <div class="copyright-box" dir="ltr">
+                <p class="copyright">&copy;OnlineShop2024</p>
+                <p class="developer">Developer: Mahdi Baderloo</p>
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+                        <!----------------- Scripts ------------------>
+
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/owl.carousel.min.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script type="module" src="Scripts/slider.js"></script>
+    <script src="Scripts/change-language.js"></script>
+
+</body>
+</html>
