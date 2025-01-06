@@ -158,6 +158,7 @@ body {
     top: 50px;
     transition: all 0.3s ease;
     opacity: 0;
+    pointer-events: none;
 }
 
 .category-item {
@@ -213,7 +214,7 @@ body {
     font-size: 30px;
 }
 
-.mobile-navbar {
+.mobile-navbar , .mobile-navbar-persian {
     z-index: 500;
     background: var(--dark-color);
     display: flex;
@@ -229,6 +230,12 @@ body {
     width: 70%;
     height: 100%;
     transition: all 0.3s ease;
+}
+
+.mobile-navbar-persian {
+    right: -95% ;
+    left: unset;
+    padding-right: 30px;
 }
 
 .brand-mobile-nav {
@@ -572,6 +579,7 @@ body {
 
 .categories-section {
     margin: 4rem 0;
+    z-index: -1;
 }
 
 .category-section-item {

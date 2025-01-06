@@ -1,7 +1,6 @@
             /******************* 1680px *******************/
 
 @media screen and (max-width: 1680px) {
-        
     .container {
         width: 1024px;
         }
@@ -55,7 +54,7 @@
 
 @media screen and (max-width: 768px) {
     
-    input, textarea, button, select, a {
+    input, textarea, button, select, a, div, i {
         -webkit-tap-highlight-color: transparent;
     }
     a, ul, li, i, div, p, button, .buy-now {
@@ -191,6 +190,25 @@
     }
     .product {
         width: 70%;
+    }
+    .category-section-item {
+        width: 130px;
+        height: 130px;
+    }
+    .banner-box {
+        height: 200px;
+    }
+    .bestseller-product {
+        width: 50%;
+    }
+    .reason {
+        width: 80%;
+    }
+    .reason-img {
+        width: 15%;
+    }
+    .reason-title {
+        font-size: 14px;
     }
     .about-and-links {
         flex-direction: column;

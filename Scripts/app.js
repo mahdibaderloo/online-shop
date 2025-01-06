@@ -7,18 +7,22 @@ const burgerMenu = document.querySelector('.burger-menu')
 const closeNav = document.querySelector('.close-nav')
 const mobileNavbarBox = document.querySelector('.mobile-navbar-box')
 const mobileNavbar = document.querySelector('.mobile-navbar')
+const mobileNavbarPersian = document.querySelector('.mobile-navbar-persian')
 const upBtn = document.querySelector('.up-button-box')
+const language = document.querySelector('.language-selected')
 
 
 // Category //
 
 function categoryItemsOpen () {
     categoryItems.style.opacity = '1'
+    categoryItems.style.pointerEvents = 'unset'
     categoryAngle.style.transform = 'rotate(180deg)'
 }
 
 function categoryItemsClose () {
     categoryItems.style.opacity = '0'
+    categoryItems.style.pointerEvents = 'none'
     categoryAngle.style.transform = 'rotate(0deg)'
 }
 
@@ -36,11 +40,23 @@ categoryBtn.addEventListener('click', event => {
 // Mobile Navbar //
 
 burgerMenu.addEventListener('click', () => {
-    mobileNavbar.style.left = '0'
+    if (language.innerHTML == 'فارسی') {
+        mobileNavbarPersian.style.right = '0'
+    }
+    else {
+        mobileNavbar.style.left = '0'
+    }
+
 })
 
 closeNav.addEventListener('click', () => {
-    mobileNavbar.style.left = '-81%'
+    if (language.innerHTML == 'فارسی') {
+        mobileNavbarPersian.style.right = '-95%'
+    }
+    else {
+        mobileNavbar.style.left = '-81%'
+    }
+
 })
 
 

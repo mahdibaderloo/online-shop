@@ -59,7 +59,7 @@
 
 @media screen and (max-width: 768px) {
     
-    input, textarea, button, select, a {
+    input, textarea, button, select, a, i , div {
         -webkit-tap-highlight-color: transparent;
     }
     a, ul, li, i, div, p, button, .buy-now, img {

@@ -4,17 +4,17 @@ $('.owl-carousel').owlCarousel({
     margin:30,
     autoplay:true,
     autoplayTimeout:1500,
-    autoplayHoverPause:true
+    autoplayHoverPause:true,
     // nav:true,
-    // responsive:{
-    //     0:{
-    //         items:1
-    //     },
-    //     600:{
-    //         items:3
-    //     },
-    //     1000:{
-    //         items:5
-    //     }
-    // }
+    responsive : {
+        250 : {
+            items : 3
+        },
+        450 : {
+            items : 3
+        },
+        650 : {
+            items : 4
+        }
+    }
 })
