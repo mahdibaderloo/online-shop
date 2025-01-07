@@ -537,16 +537,28 @@ body {
 }
 
 .product-title {
-
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.product-image {
+.product-img-box {
     width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 4px var(--dark-color);
     background-color: #d6d6d6;
+}
+
+.product-image {
+    width: 100px;
+    height: 150px;
     cursor: pointer;
+    
 }
 
 .product-price {

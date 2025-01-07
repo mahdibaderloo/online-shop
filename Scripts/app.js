@@ -10,6 +10,7 @@ const mobileNavbar = document.querySelector('.mobile-navbar')
 const mobileNavbarPersian = document.querySelector('.mobile-navbar-persian')
 const upBtn = document.querySelector('.up-button-box')
 const language = document.querySelector('.language-selected')
+const products = document.querySelector('.products')
 
 
 // Category //
@@ -67,11 +68,15 @@ upBtn.addEventListener('click', () => {
 })
 
 
-// fetch('https://api.escuelajs.co/api/v1/categories')
-//             .then(res=>res.json())
-//             .then(json=>console.log(json))
-
-
+`
+<li class="product">
+    <p class="product-title">${item.title}</p>
+    <div class="product-img-box">
+        <img src="${item.image}" alt="Product Image" class="product-image">
+    </div>
+    <p class="product-price">${item.price}$</p>
+    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+</li>`
 
 
 // Window //
