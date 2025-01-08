@@ -88,3 +88,7 @@ let products = [
     {id : 79 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
     {id : 80 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
 ]
+
+
+
+export {products}

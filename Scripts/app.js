@@ -1,3 +1,6 @@
+import { products } from "../Scripts/data-base.js";
+
+
 // DOM Elements //
 
 const categoryBtn = document.querySelector('.category')
@@ -10,7 +13,7 @@ const mobileNavbar = document.querySelector('.mobile-navbar')
 const mobileNavbarPersian = document.querySelector('.mobile-navbar-persian')
 const upBtn = document.querySelector('.up-button-box')
 const language = document.querySelector('.language-selected')
-const products = document.querySelector('.products')
+const productsContainer = document.querySelector('.products')
 
 
 // Category //
@@ -68,18 +71,39 @@ upBtn.addEventListener('click', () => {
 })
 
 
-`
-<li class="product">
-    <p class="product-title">${item.title}</p>
-    <div class="product-img-box">
-        <img src="${item.image}" alt="Product Image" class="product-image">
-    </div>
-    <p class="product-price">${item.price}$</p>
-    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
-</li>`
+
 
 
 // Window //
+
+window.addEventListener('load', () => {
+    for (let i = 0 ; i <= 14 ; i ++) {
+        let data = products[Math.floor(Math.random() * products.length)]
+
+        if (language.innerHTML == 'English') {
+            productsContainer.insertAdjacentHTML('beforeend', `
+                <li class="product">
+                    <p class="product-title">${data.title}</p>
+                    <div class="product-img-box">
+                        <img src="${data.image}" alt="Product Image" class="product-image">
+                    </div>
+                    <p class="product-price">${data.price}$</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+                </li>`)
+        }
+        else if (language.innerHTML == 'فارسی') {
+            productsContainer.insertAdjacentHTML('beforeend', `
+                <li class="product">
+                    <p class="product-title">${data.persianTitle}</p>
+                    <div class="product-img-box">
+                        <img src="${data.image}" alt="Product Image" class="product-image">
+                    </div>
+                    <p class="product-price">${data.price * 80000}</p>
+                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+                </li>`)
+        }
+    }
+})
 
 window.addEventListener('click', event => {
     if (event.target.className != 'category-items' && event.target.className != 'nav-link category') {
