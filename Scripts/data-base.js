@@ -77,16 +77,6 @@ let products = [
     {id : 69 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
     {id : 70 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
 
-    {id : 71 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 72 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 73 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 74 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 75 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 76 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 77 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 78 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 79 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
-    {id : 80 , title : '' , persianTitle : '' , image : '' , category : 'glasses' , price : 1},
 ]
 
 
