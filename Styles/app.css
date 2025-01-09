@@ -695,10 +695,11 @@ body {
 }
 
 .bestseller-title {
-    color: var(--light-color);
-    white-space: nowrap;
+    width: 98%;
     overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
+    color: var(--light-color);
     height: 30px;
     font-size: 16px;
     user-select: none;
@@ -714,9 +715,11 @@ body {
 }
 
 .bestseller-price {
+    width: 98%;
     color: var(--light-color);
     text-shadow: 1px 1px 2px var(--dark-color);
     font-size: 16px;
+    text-align: center;
 }
 
 .bestseller-btn {
