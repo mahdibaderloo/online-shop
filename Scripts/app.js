@@ -14,6 +14,7 @@ const mobileNavbarPersian = document.querySelector('.mobile-navbar-persian')
 const upBtn = document.querySelector('.up-button-box')
 const language = document.querySelector('.language-selected')
 const productsContainer = document.querySelector('.products')
+const bestsellers = document.querySelector('.bestsellers-products')
 
 
 // Category //
@@ -82,7 +83,7 @@ window.addEventListener('load', () => {
 
         if (language.innerHTML == 'English') {
             productsContainer.insertAdjacentHTML('beforeend', `
-                <li class="product">
+                <li class="product" id="${data.id}">
                     <p class="product-title">${data.title}</p>
                     <div class="product-img-box">
                         <img src="${data.image}" alt="Product Image" class="product-image">
@@ -93,13 +94,36 @@ window.addEventListener('load', () => {
         }
         else if (language.innerHTML == 'فارسی') {
             productsContainer.insertAdjacentHTML('beforeend', `
-                <li class="product">
-                    <p class="product-title">${data.persianTitle}</p>
+                <li class="product" id="${data.id}">
+                    <p style="height:30px;" class="product-title">${data.persianTitle}</p>
                     <div class="product-img-box">
                         <img src="${data.image}" alt="Product Image" class="product-image">
                     </div>
-                    <p class="product-price">${data.price * 80000}</p>
+                    <p class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
                     <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+                </li>`)
+        }
+    }
+
+    for (let i = 0 ; i <= 3 ; i ++) {
+
+        let data = products[Math.floor(Math.random() * products.length)]
+        if (language.innerHTML == 'English') {
+            bestsellers.insertAdjacentHTML('beforeend', `
+                <li class="bestseller-product" id="${data.id}">
+                    <p class="bestseller-title">${data.title}</p>
+                    <img src="${data.image}" alt="Product Image" class="bestseller-image">
+                    <p class="bestseller-price">${data.price}$</p>
+                    <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                </li>`)
+        }
+        else if (language.innerHTML == 'فارسی') {
+            bestsellers.insertAdjacentHTML('beforeend', `
+                <li class="bestseller-product" id="${data.id}">
+                    <p class="bestseller-title">${data.persianTitle}</p>
+                    <img src="${data.image}" alt="Product Image" class="bestseller-image">
+                    <p class="bestseller-price">${data.price} تومان</p>
+                    <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)
         }
     }
