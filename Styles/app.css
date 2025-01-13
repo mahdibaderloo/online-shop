@@ -715,6 +715,7 @@ body {
     box-shadow: 0 0 4px var(--light-color);
     background-color: var(--light-color);
     cursor: pointer;
+    overflow: hidden;
 }
 
 .bestseller-image {
