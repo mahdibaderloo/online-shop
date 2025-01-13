@@ -66,16 +66,16 @@ let products = [
     {id : 59 , title : '' , persianTitle : '' , image : '' , category : 'hat' , price : 1},
     {id : 60 , title : '' , persianTitle : '' , image : '' , category : 'hat' , price : 1},
 
-    {id : 61 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 62 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 63 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 64 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 65 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 66 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 67 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 68 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 69 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
-    {id : 70 , title : '' , persianTitle : '' , image : '' , category : 'clothes' , price : 1},
+    {id : 61 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 62 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 63 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 64 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 65 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 66 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 67 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 68 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 69 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
+    {id : 70 , title : '' , persianTitle : '' , image : '' , category : 'Glasses' , price : 1},
 
 ]
 
