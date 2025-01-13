@@ -112,7 +112,9 @@ window.addEventListener('load', () => {
             bestsellers.insertAdjacentHTML('beforeend', `
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.title}</p>
-                    <img src="${data.image}" alt="Product Image" class="bestseller-image">
+                    <div class="bestseller-image-box">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image">
+                    </div>
                     <p class="bestseller-price">${data.price}$</p>
                     <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)
@@ -121,7 +123,9 @@ window.addEventListener('load', () => {
             bestsellers.insertAdjacentHTML('beforeend', `
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.persianTitle}</p>
-                    <img src="${data.image}" alt="Product Image" class="bestseller-image">
+                    <div class="bestseller-image-box">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image">
+                    </div>
                     <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
                     <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)

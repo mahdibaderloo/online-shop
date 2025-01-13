@@ -705,13 +705,21 @@ body {
     user-select: none;
 }
 
-.bestseller-image {
+.bestseller-image-box {
     width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 4px var(--light-color);
     background-color: var(--light-color);
     cursor: pointer;
+}
+
+.bestseller-image {
+    width: 150px;
+    height: 150px;  
 }
 
 .bestseller-price {
