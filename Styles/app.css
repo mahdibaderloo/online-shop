@@ -109,6 +109,66 @@ body {
 
 
 
+/********************* Popup *********************/
+
+.popup-box {
+    position: fixed;
+    top: 10%;
+    background-color: var(--light-color);
+    border: 3px solid var(--supplement-color);
+    box-shadow: 0 0 10px var(--supplement-color);
+    border-radius: 25px;
+    z-index: 500;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(0px) !important;
+}
+
+.popup-title {
+    font-size: 18px;
+}
+
+.popup-image-box {
+    width: 60%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.popup-img {
+    width: 100%;
+}
+
+.popup-description {
+    line-height: 1.2;
+}
+
+.popup-price {
+    font-size: 18px;
+}
+
+.popup-btn {
+    border: none;
+    border-radius: 10px;
+    width: 50%;
+    height: 50px;
+    font-family: var(--main-font);
+    background-color: var(--supplement-color);
+    color: var(--dark-color);
+    letter-spacing: 1px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+
+
 /********************* Navbar *********************/
 
 .navbar {

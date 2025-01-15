@@ -86,7 +86,7 @@ window.addEventListener('load', () => {
                 <li class="product" id="${data.id}">
                     <p class="product-title">${data.title}</p>
                     <div class="product-img-box">
-                        <img src="${data.image}" alt="Product Image" class="product-image">
+                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="openPopup(this)">
                     </div>
                     <p class="product-price">${data.price}$</p>
                     <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
@@ -97,7 +97,7 @@ window.addEventListener('load', () => {
                 <li class="product" id="${data.id}">
                     <p style="height:30px;" class="product-title">${data.persianTitle}</p>
                     <div class="product-img-box">
-                        <img src="${data.image}" alt="Product Image" class="product-image">
+                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="openPopup()">
                     </div>
                     <p class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
                     <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
@@ -113,7 +113,7 @@ window.addEventListener('load', () => {
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.title}</p>
                     <div class="bestseller-image-box">
-                        <img src="${data.image}" alt="Product Image" class="bestseller-image">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="openPopup()">
                     </div>
                     <p class="bestseller-price">${data.price}$</p>
                     <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
@@ -124,7 +124,7 @@ window.addEventListener('load', () => {
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.persianTitle}</p>
                     <div class="bestseller-image-box">
-                        <img src="${data.image}" alt="Product Image" class="bestseller-image">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="openPopup()">
                     </div>
                     <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
                     <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
