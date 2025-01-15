@@ -15,6 +15,7 @@ const upBtn = document.querySelector('.up-button-box')
 const language = document.querySelector('.language-selected')
 const productsContainer = document.querySelector('.products')
 const bestsellers = document.querySelector('.bestsellers-products')
+const popupBox = document.querySelector('.popup-box')
 
 
 // Category //
@@ -72,12 +73,10 @@ upBtn.addEventListener('click', () => {
 })
 
 
+// Show Products //
 
+function showProducts () {
 
-
-// Window //
-
-window.addEventListener('load', () => {
     for (let i = 0 ; i <= 14 ; i ++) {
         let data = products[Math.floor(Math.random() * products.length)]
 
@@ -86,7 +85,7 @@ window.addEventListener('load', () => {
                 <li class="product" id="${data.id}">
                     <p class="product-title">${data.title}</p>
                     <div class="product-img-box">
-                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="openPopup(this)">
+                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
                     </div>
                     <p class="product-price">${data.price}$</p>
                     <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
@@ -97,23 +96,31 @@ window.addEventListener('load', () => {
                 <li class="product" id="${data.id}">
                     <p style="height:30px;" class="product-title">${data.persianTitle}</p>
                     <div class="product-img-box">
-                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="openPopup()">
+                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(${data})">
                     </div>
                     <p class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
                     <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
                 </li>`)
         }
     }
+    
+} 
+
+
+// Show Bestsellers //
+
+function showBestsellers () {
 
     for (let i = 0 ; i <= 3 ; i ++) {
 
         let data = products[Math.floor(Math.random() * products.length)]
+
         if (language.innerHTML == 'English') {
             bestsellers.insertAdjacentHTML('beforeend', `
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.title}</p>
                     <div class="bestseller-image-box">
-                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="openPopup()">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(${data})">
                     </div>
                     <p class="bestseller-price">${data.price}$</p>
                     <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
@@ -124,18 +131,68 @@ window.addEventListener('load', () => {
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.persianTitle}</p>
                     <div class="bestseller-image-box">
-                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="openPopup()">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(${data})">
                     </div>
                     <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
                     <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)
         }
     }
+
+} 
+
+
+// Popup //
+
+function showPopup (product) {
+
+    popupBox.style.opacity = '1'
+    popupBox.style.visibility = 'visible'
+    popupBox.innerHTML = ''
+    let popupContent = `
+                <p class="popup-title">${product.parentNode.parentNode.firstElementChild.textContent}</p>
+        <div class="popup-image-box">
+            <img src="${product.src}" alt="" class="popup-img">
+        </div>
+        <div class="popup-colors">
+            <p class="color-title">Colors : </p>
+            <span class="color" id="black"></span>
+            <span class="color" id="white"></span>
+            <span class="color" id="gray"></span>
+            <span class="color" id="blue"></span>
+            <span class="color" id="yellow"></span>
+            <span class="color" id="red"></span>
+        </div>
+        <p class="popup-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias hic corporis ab eos laudantium facere enim consequuntur officiis reprehenderit voluptatum, assumenda amet nemo? Temporibus praesentium quas a. Doloribus accusamus ut explicabo sequi, labore officiis harum? Vero nemo nulla praesentium nam.</p>
+        <p class="popup-price">${product.parentNode.parentNode.children[2].textContent}</p>
+        <button class="popup-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button> `
+
+    popupBox.insertAdjacentHTML('beforeend' , popupContent)
+} 
+
+function hidePopup () {
+    popupBox.style.opacity = '0'
+    popupBox.style.visibility = 'hidden'
+}
+
+
+
+
+
+// Window //
+
+window.addEventListener('load', () => {
+    
+    showProducts()
+    showBestsellers()
 })
 
 window.addEventListener('click', event => {
     if (event.target.className != 'category-items' && event.target.className != 'nav-link category') {
         categoryItemsClose()
+    }
+    if (event.target.id != 'popup' && event.target.className != 'product-image' && event.target.className != 'popup-title' && event.target.className != 'popup-img' && event.target.className != 'popup-box' && event.target.className != 'color-title' && event.target.className != 'popup-colors' && event.target.className != 'color' && event.target.className != 'popup-description' && event.target.className != 'popup-price') {
+        hidePopup()
     }
 })
 
@@ -150,3 +207,7 @@ window.addEventListener('scroll', () => {
     }
 
 })
+
+
+
+window.showPopup = showPopup

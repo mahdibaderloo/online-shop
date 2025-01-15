@@ -113,14 +113,14 @@ body {
 
 .popup-box {
     position: fixed;
-    top: 10%;
+    top: 5%;
     background-color: var(--light-color);
     border: 3px solid var(--supplement-color);
     box-shadow: 0 0 10px var(--supplement-color);
     border-radius: 25px;
     z-index: 500;
     width: 500px;
-    height: 500px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +128,8 @@ body {
     padding: 1rem;
     opacity: 0;
     visibility: hidden;
-    filter: blur(0px) !important;
+    transition: all 0.3s ease;
+    user-select: none;
 }
 
 .popup-title {
@@ -145,12 +146,57 @@ body {
     width: 100%;
 }
 
+.popup-colors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.color-title {
+
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    background-color: var(--supplement-color);
+    box-shadow: 0 1px 2px var(--dark-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#black{
+    background-color: var(--dark-color);
+}
+
+#white{
+    background-color: var(--light-color);
+}
+
+#gray{
+    background-color: gray;
+}
+
+#blue{
+    background-color: lightblue;
+}
+
+#yellow{
+    background-color: var(--supplement-color);
+}
+
+#red{
+    background-color: lightcoral;
+}
+
+
 .popup-description {
     line-height: 1.2;
 }
 
 .popup-price {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .popup-btn {
