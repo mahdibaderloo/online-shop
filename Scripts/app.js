@@ -16,6 +16,10 @@ const language = document.querySelector('.language-selected')
 const productsContainer = document.querySelector('.products')
 const bestsellers = document.querySelector('.bestsellers-products')
 const popupBox = document.querySelector('.popup-box')
+const popupTitle = document.querySelector('.popup-title')
+const popupImg = document.querySelector('.popup-img')
+const popupPrice = document.querySelector('.popup-price')
+const colors = document.querySelector('.popup-colors')
 
 
 // Category //
@@ -148,48 +152,15 @@ function showPopup (product) {
 
     popupBox.style.opacity = '1'
     popupBox.style.visibility = 'visible'
-    popupBox.innerHTML = ''
-
-    let englishPopupContent = `
-                <p class="popup-title">${product.parentNode.parentNode.firstElementChild.textContent}</p>
-        <div class="popup-image-box">
-            <img src="${product.src}" alt="" class="popup-img">
-        </div>
-        <div class="popup-colors">
-            <p class="color-title">Colors : </p>
-            <span class="color" id="black"></span>
-            <span class="color" id="white"></span>
-            <span class="color" id="gray"></span>
-            <span class="color" id="blue"></span>
-            <span class="color" id="yellow"></span>
-            <span class="color" id="red"></span>
-        </div>
-        <p class="popup-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias hic corporis ab eos laudantium facere enim consequuntur officiis reprehenderit voluptatum, assumenda amet nemo? Temporibus praesentium quas a. Doloribus accusamus ut explicabo sequi, labore officiis harum? Vero nemo nulla praesentium nam.</p>
-        <p class="popup-price">${product.parentNode.parentNode.children[2].textContent}</p>
-        <button class="popup-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button> `
-
-    let persianPopupContent = `
-                <p class="popup-title">${product.parentNode.parentNode.firstElementChild.textContent}</p>
-        <div class="popup-image-box">
-            <img src="${product.src}" alt="" class="popup-img">
-        </div>
-        <div class="popup-colors">
-            <p style="font-weight:bold" class="color-title">رنگ محصول : </p>
-            <span class="color" id="black"></span>
-            <span class="color" id="white"></span>
-            <span class="color" id="gray"></span>
-            <span class="color" id="blue"></span>
-            <span class="color" id="yellow"></span>
-            <span class="color" id="red"></span>
-        </div>
-        <p class="popup-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای</p>
-        <p class="popup-price">${product.parentNode.parentNode.children[2].textContent}</p>
-        <button style="font-family: 'Segoe UI'; font-weight:bold" class="popup-btn">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button> `
 
     if (language.innerHTML == 'English') {
-        popupBox.insertAdjacentHTML('beforeend' , englishPopupContent)
+        popupTitle.innerHTML = product.parentNode.parentNode.firstElementChild.textContent
+        popupImg.src = product.src
+        popupPrice.innerHTML = product.parentNode.parentNode.children[2].textContent
     } else {
-        popupBox.insertAdjacentHTML('beforeend' , persianPopupContent)
+        popupTitle.innerHTML = product.parentNode.parentNode.firstElementChild.textContent
+        popupImg.src = product.src
+        popupPrice.innerHTML = product.parentNode.parentNode.children[2].textContent
     }
 
 } 
@@ -200,6 +171,25 @@ function hidePopup () {
 }
 
 
+// Select Colors //
+
+let colorElements = colors.querySelectorAll('.color')
+
+colorElements.forEach (color => {
+    color.addEventListener('click', event => {
+        deselectColor()
+
+        if (color.className != 'color selected') {
+            color.classList.add('selected')
+        }
+    })
+})
+
+function deselectColor () {
+    for (let item of colorElements) {
+        item.classList.remove('selected')
+    }
+}
 
 
 
@@ -215,8 +205,9 @@ window.addEventListener('click', event => {
     if (event.target.className != 'category-items' && event.target.className != 'nav-link category') {
         categoryItemsClose()
     }
-    if (event.target.id != 'popup' && event.target.className != 'product-image' && event.target.className != 'popup-title' && event.target.className != 'popup-img' && event.target.className != 'popup-box' && event.target.className != 'color-title' && event.target.className != 'popup-colors' && event.target.className != 'color' && event.target.className != 'popup-description' && event.target.className != 'popup-price') {
+    if (event.target.id != 'popup' && event.target.className != 'product-image' && event.target.className != 'popup-title' && event.target.className != 'popup-img' && event.target.className != 'popup-box' && event.target.className != 'color-title' && event.target.className != 'popup-colors' && event.target.className != 'color' && event.target.className != 'popup-description' && event.target.className != 'popup-price' && event.target.className != 'color selected') {
         hidePopup()
+        deselectColor()
     }
 })
 
@@ -235,3 +226,4 @@ window.addEventListener('scroll', () => {
 
 
 window.showPopup = showPopup
+window.deselectColor = deselectColor
