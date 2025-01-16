@@ -219,7 +219,7 @@
         width: 70%;
     }
     .product:hover {
-        transform: scale(1);
+        transform: unset;
     }
     .add-to-cart:hover {
         box-shadow: 0 0 6px var(--dark-color);
@@ -236,7 +236,7 @@
         width: 50%;
     }
     .bestseller-product:hover {
-        transform: scale(1);
+        transform: unset;
     } 
     .bestseller-btn:hover {
         background-color: transparent;
@@ -250,7 +250,8 @@
         width: 15%;
     }
     .reason-title {
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: bold;
     }
     .about-and-links {
         flex-direction: column;

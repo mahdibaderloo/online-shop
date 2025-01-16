@@ -98,12 +98,12 @@ function showProducts () {
         else if (language.innerHTML == 'فارسی') {
             productsContainer.insertAdjacentHTML('beforeend', `
                 <li class="product" id="${data.id}">
-                    <p style="height:30px;" class="product-title">${data.persianTitle}</p>
+                    <p style="height:30px; font-weight:bold;" class="product-title">${data.persianTitle}</p>
                     <div class="product-img-box">
                         <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
                     </div>
-                    <p class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
-                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+                    <p style=" font-size: 18px" class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
+                    <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
                 </li>`)
         }
     }
@@ -133,12 +133,12 @@ function showBestsellers () {
         else if (language.innerHTML == 'فارسی') {
             bestsellers.insertAdjacentHTML('beforeend', `
                 <li class="bestseller-product" id="${data.id}">
-                    <p class="bestseller-title">${data.persianTitle}</p>
+                    <p style="font-family: 'Segoe UI'; font-weight:bold;" class="bestseller-title">${data.persianTitle}</p>
                     <div class="bestseller-image-box">
                         <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
                     </div>
                     <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
-                    <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                    <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart bestseller-btn">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)
         }
     }
