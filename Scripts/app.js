@@ -96,7 +96,7 @@ function showProducts () {
                 <li class="product" id="${data.id}">
                     <p style="height:30px;" class="product-title">${data.persianTitle}</p>
                     <div class="product-img-box">
-                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(${data})">
+                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
                     </div>
                     <p class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
                     <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
@@ -120,7 +120,7 @@ function showBestsellers () {
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.title}</p>
                     <div class="bestseller-image-box">
-                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(${data})">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
                     </div>
                     <p class="bestseller-price">${data.price}$</p>
                     <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
@@ -131,7 +131,7 @@ function showBestsellers () {
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.persianTitle}</p>
                     <div class="bestseller-image-box">
-                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(${data})">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
                     </div>
                     <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
                     <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
@@ -149,7 +149,8 @@ function showPopup (product) {
     popupBox.style.opacity = '1'
     popupBox.style.visibility = 'visible'
     popupBox.innerHTML = ''
-    let popupContent = `
+
+    let englishPopupContent = `
                 <p class="popup-title">${product.parentNode.parentNode.firstElementChild.textContent}</p>
         <div class="popup-image-box">
             <img src="${product.src}" alt="" class="popup-img">
@@ -167,7 +168,30 @@ function showPopup (product) {
         <p class="popup-price">${product.parentNode.parentNode.children[2].textContent}</p>
         <button class="popup-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button> `
 
-    popupBox.insertAdjacentHTML('beforeend' , popupContent)
+    let persianPopupContent = `
+                <p class="popup-title">${product.parentNode.parentNode.firstElementChild.textContent}</p>
+        <div class="popup-image-box">
+            <img src="${product.src}" alt="" class="popup-img">
+        </div>
+        <div class="popup-colors">
+            <p style="font-weight:bold" class="color-title">رنگ محصول : </p>
+            <span class="color" id="black"></span>
+            <span class="color" id="white"></span>
+            <span class="color" id="gray"></span>
+            <span class="color" id="blue"></span>
+            <span class="color" id="yellow"></span>
+            <span class="color" id="red"></span>
+        </div>
+        <p class="popup-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای</p>
+        <p class="popup-price">${product.parentNode.parentNode.children[2].textContent}</p>
+        <button style="font-family: 'Segoe UI'; font-weight:bold" class="popup-btn">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button> `
+
+    if (language.innerHTML == 'English') {
+        popupBox.insertAdjacentHTML('beforeend' , englishPopupContent)
+    } else {
+        popupBox.insertAdjacentHTML('beforeend' , persianPopupContent)
+    }
+
 } 
 
 function hidePopup () {
