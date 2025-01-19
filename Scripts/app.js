@@ -16,6 +16,8 @@ const upBtn = document.querySelector('.up-button-box')
 const language = document.querySelector('.language-selected')
 const productsContainer = document.querySelector('.products')
 const showMore = document.querySelector('.show-more')
+const categoryImages = document.querySelectorAll('.category-img')
+const categoryTitles = document.querySelectorAll('.category-title')
 const bestsellers = document.querySelector('.bestsellers-products')
 const popupBox = document.querySelector('.popup-box')
 const popupTitle = document.querySelector('.popup-title')
@@ -208,13 +210,27 @@ function deselectColor () {
 categoryLinks.forEach (category => {
     category.addEventListener('click', event => {
         event.preventDefault()
-        productsContainer.innerHTML = ''
-        showMore.style.visibility = 'hidden'
+        showCategoryProducts(event.target.dataset.category)
+    })
+})
+
+categoryImages.forEach (category => {
+    category.addEventListener('click', event => {
+        showCategoryProducts(event.target.dataset.category)
+    })
+})
+
+categoryTitles.forEach (category => {
+    category.addEventListener('click', event => {
         showCategoryProducts(event.target.dataset.category)
     })
 })
 
 function showCategoryProducts (data) {
+    productsContainer.innerHTML = ''
+    showMore.style.visibility = 'hidden'
+    window.scrollTo(250, 250)
+
     switch (data) {
         case 'men':
             products.forEach (product => {
