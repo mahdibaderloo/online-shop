@@ -82,6 +82,7 @@ upBtn.addEventListener('click', () => {
 
 function showProducts () {
     
+    productsContainer.innerHTML = ''
     for (let i = 0 ; i <= 14 ; i ++) {
         let data = products[Math.floor(Math.random() * products.length)]
         
@@ -198,6 +199,77 @@ function deselectColor () {
         item.classList.remove('selected')
     }
 }
+
+
+// Show Category Products //
+
+categoryLinks.forEach (category => {
+    category.addEventListener('click', event => {
+        event.preventDefault()
+        productsContainer.innerHTML = ''
+      
+        switch (event.target.dataset.category) {
+            case 'men':
+                products.forEach (product => {
+                    if (product.category === 'men') {
+                        getProducts(product)
+                    }
+                })
+                break;
+
+            case 'women':
+                products.forEach (product => {
+                    if (product.category === 'women') {
+                        getProducts(product)
+                    }
+                })
+                break;
+
+            case 'kids':
+                products.forEach (product => {
+                    if (product.category === 'kids') {
+                        getProducts(product)
+                    }
+                })
+                break;
+
+            case 'shoes':
+                products.forEach (product => {
+                    if (product.category === 'shoes') {
+                        getProducts(product)
+                    }
+                })
+                break;
+
+            case 'accessory':
+                products.forEach (product => {
+                    if (product.category === 'accessory') {
+                        getProducts(product)
+                    }
+                })
+                break;
+
+            case 'hat':
+                products.forEach (product => {
+                    if (product.category === 'hat') {
+                        getProducts(product)
+                    }
+                })
+                break;
+
+            case 'glasses':
+                products.forEach (product => {
+                    if (product.category === 'glasses') {
+                        getProducts(product)
+                    }
+                })
+                break;
+
+            default: alert('An error occurred !!! \n یه اتفاقی افتاده !!!')
+                break;
+        }
+    })
+})
 
 
 
