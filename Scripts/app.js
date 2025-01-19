@@ -81,35 +81,42 @@ upBtn.addEventListener('click', () => {
 // Show Products //
 
 function showProducts () {
-
+    
     for (let i = 0 ; i <= 14 ; i ++) {
         let data = products[Math.floor(Math.random() * products.length)]
-
-        if (language.innerHTML == 'English') {
-            productsContainer.insertAdjacentHTML('beforeend', `
-                <li class="product" id="${data.id}">
-                    <p class="product-title">${data.title}</p>
-                    <div class="product-img-box">
-                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
-                    </div>
-                    <p class="product-price">${data.price}$</p>
-                    <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
-                </li>`)
-        }
-        else if (language.innerHTML == 'فارسی') {
-            productsContainer.insertAdjacentHTML('beforeend', `
-                <li class="product" id="${data.id}">
-                    <p style="height:30px; font-weight:bold;" class="product-title">${data.persianTitle}</p>
-                    <div class="product-img-box">
-                        <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
-                    </div>
-                    <p style=" font-size: 18px" class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
-                    <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
-                </li>`)
-        }
+        
+        getProducts(data)
     }
     
 } 
+
+
+// Get Products //
+
+function getProducts (data) {
+    if (language.innerHTML == 'English') {
+        productsContainer.insertAdjacentHTML('beforeend', `
+            <li class="product" id="${data.id}">
+                <p class="product-title">${data.title}</p>
+                <div class="product-img-box">
+                    <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
+                </div>
+                <p class="product-price">${data.price}$</p>
+                <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+            </li>`)
+    }
+    else if (language.innerHTML == 'فارسی') {
+        productsContainer.insertAdjacentHTML('beforeend', `
+            <li class="product" id="${data.id}">
+                <p style="height:30px; font-weight:bold;" class="product-title">${data.persianTitle}</p>
+                <div class="product-img-box">
+                    <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
+                </div>
+                <p style=" font-size: 18px" class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
+                <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+            </li>`)
+    }
+}
 
 
 // Show Bestsellers //
