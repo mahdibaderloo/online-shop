@@ -6,6 +6,7 @@ import { products } from "../Scripts/data-base.js";
 const categoryBtn = document.querySelector('.category')
 const categoryItems = document.querySelector('.category-items')
 const categoryAngle = document.querySelector('.category-angle')
+const categoryLinks = document.querySelectorAll('.category-link')
 const burgerMenu = document.querySelector('.burger-menu')
 const closeNav = document.querySelector('.close-nav')
 const mobileNavbarBox = document.querySelector('.mobile-navbar-box')
@@ -22,7 +23,7 @@ const popupPrice = document.querySelector('.popup-price')
 const colors = document.querySelector('.popup-colors')
 
 
-// Category //
+// Category (Navbar) //
 
 function categoryItemsOpen () {
     categoryItems.style.opacity = '1'
