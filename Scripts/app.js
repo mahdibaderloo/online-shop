@@ -107,7 +107,7 @@ function getProducts (data) {
                     <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
                 </div>
                 <p class="product-price">${data.price}$</p>
-                <button class="add-to-cart">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+                <button class="add-to-cart" onclick="addToCart(${data})">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
             </li>`)
     }
     else if (language.innerHTML == 'فارسی') {
@@ -118,7 +118,7 @@ function getProducts (data) {
                     <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
                 </div>
                 <p style=" font-size: 18px" class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
-                <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+                <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart" onclick="addToCart(${data})">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
             </li>`)
     }
 }
@@ -131,32 +131,39 @@ function showBestsellers () {
     for (let i = 0 ; i <= 3 ; i ++) {
 
         let data = products[Math.floor(Math.random() * products.length)]
-
-        if (language.innerHTML == 'English') {
-            bestsellers.insertAdjacentHTML('beforeend', `
-                <li class="bestseller-product" id="${data.id}">
-                    <p class="bestseller-title">${data.title}</p>
-                    <div class="bestseller-image-box">
-                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
-                    </div>
-                    <p class="bestseller-price">${data.price}$</p>
-                    <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
-                </li>`)
-        }
-        else if (language.innerHTML == 'فارسی') {
-            bestsellers.insertAdjacentHTML('beforeend', `
-                <li class="bestseller-product" id="${data.id}">
-                    <p style="font-family: 'Segoe UI'; font-weight:bold;" class="bestseller-title">${data.persianTitle}</p>
-                    <div class="bestseller-image-box">
-                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
-                    </div>
-                    <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
-                    <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart bestseller-btn">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
-                </li>`)
-        }
+        getBestsellers(data)
     }
 
 } 
+
+
+// Get Bestsellers Products
+
+function getBestsellers (data) {
+
+    if (language.innerHTML == 'English') {
+        bestsellers.insertAdjacentHTML('beforeend', `
+            <li class="bestseller-product" id="${data.id}">
+                <p class="bestseller-title">${data.title}</p>
+                <div class="bestseller-image-box">
+                    <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
+                </div>
+                <p class="bestseller-price">${data.price}$</p>
+                <button class="add-to-cart bestseller-btn">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+            </li>`)
+    }
+    else if (language.innerHTML == 'فارسی') {
+        bestsellers.insertAdjacentHTML('beforeend', `
+            <li class="bestseller-product" id="${data.id}">
+                <p style="font-family: 'Segoe UI'; font-weight:bold;" class="bestseller-title">${data.persianTitle}</p>
+                <div class="bestseller-image-box">
+                    <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
+                </div>
+                <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
+                <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart bestseller-btn">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+            </li>`)
+    }
+}
 
 
 // Popup //
