@@ -30,7 +30,7 @@ function createItem (item) {
         <li class="cart-item">
             <div class="product-content">
                 <img src="${item.image}" alt="item image" class="product-img">
-                <p class="product-title">${item.title}</p>
+                <p class="product-title">${item.title.replace(",", "'")}</p>
             </div>
             <div class="count-box">
                 <p class="product-count">1</p>
