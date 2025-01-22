@@ -187,7 +187,6 @@ function addToItems (id, title, image, price) {
 }
 
 
-
 // Local Storage
 
 function setItemInLocalStorage (data) {
@@ -350,7 +349,6 @@ window.addEventListener('click', event => {
 })
 
 window.addEventListener('scroll', () => {
-    console.log(window.scrollY)
     if (window.scrollY >= 295) {
         mobileNavbarBox.style.position = 'fixed'
         upBtn.style.bottom = '2rem'
@@ -366,4 +364,3 @@ window.addEventListener('scroll', () => {
 window.showPopup = showPopup
 window.deselectColor = deselectColor
 window.addToItems = addToItems
-window.addToCart = addToCart
