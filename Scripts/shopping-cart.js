@@ -4,7 +4,12 @@ let cartItems = document.querySelector('.cart-items')
 
 
 
+// Get Items From Local Storage //
 
+function getLocalItems () {
+    let localItems = localStorage.getItem('product')
+    return JSON.parse(localItems)
+}
 
 
 // Create Items //
