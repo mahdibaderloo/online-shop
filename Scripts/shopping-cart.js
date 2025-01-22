@@ -30,7 +30,7 @@ function addItemsToCart () {
 // Create Items //
 
 function createItem (item) {
-    if (language.innerHTML == 'English') {
+    if (language.language == 'English') {
         cartItems.insertAdjacentHTML('beforeend' , `
             <li class="cart-item">
                 <div class="product-content">
