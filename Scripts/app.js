@@ -185,6 +185,16 @@ function addToItems (id, title, image, price) {
         setItemInLocalStorage(items)
     }
 }
+
+
+
+// Local Storage
+
+function setItemInLocalStorage (data) {
+    localStorage.setItem('product', JSON.stringify(data))
+}
+
+
 // Popup //
 
 function showPopup (product) {
