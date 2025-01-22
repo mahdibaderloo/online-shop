@@ -159,7 +159,7 @@
     }
     .popup-box {
         width: 320px;
-        height: 440px;
+        height: 520px;
     }
     .popup-title {
         font-size: 16px;
@@ -174,7 +174,7 @@
         font-size: 14px;
     }
     .popup-image-box {
-        width: 50%;
+        width: 60%;
         display: flex;
         align-items: center;
         justify-content: center;    
