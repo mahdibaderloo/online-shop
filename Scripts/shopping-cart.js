@@ -83,7 +83,11 @@ function changeTotalPrice () {
     items.forEach (item => {
         total += item.price
     })
-    totalPrice.innerHTML = `${total} $`
+    if (!language || language.language == 'English') {
+        totalPrice.innerHTML = `${total} $`
+    } else {
+        totalPrice.innerHTML = `${(total * 80_000).toLocaleString()}`
+    }
 }
 
 
