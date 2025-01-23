@@ -55,7 +55,7 @@ function createItem (items) {
                     </li>`)
             } else {
                 cartItems.insertAdjacentHTML('beforeend' , `
-                    <li class="cart-item">
+                    <li class="cart-item" dir="rtl">
                         <div class="product-content">
                             <img src="${item.image}" alt="item image" class="product-img">
                             <p class="product-title">${item.persianTitle}</p>
@@ -68,7 +68,7 @@ function createItem (items) {
                             </div>
                         </div>
                         <p class="product-price">${(item.price * 80_000).toLocaleString()}</p>
-                        <img src="Images/delete-icon.svg" alt="delete icon" class="delete-product">
+                        <img style="margin-left:5px" src="Images/delete-icon.svg" alt="delete icon" class="delete-product">
                     </li>`)
                 }
         }
