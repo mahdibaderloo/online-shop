@@ -194,6 +194,10 @@ function setItemInLocalStorage (data) {
     localStorage.setItem('product', JSON.stringify(data))
 }
 
+function getLocalStorageItems () {
+    return JSON.parse(localStorage.getItem('product'))
+}
+
 
 // Popup //
 
