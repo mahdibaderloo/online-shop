@@ -84,7 +84,7 @@ function changeTotalPrice () {
         total += item.price
     })
     if (!language || language.language == 'English') {
-        totalPrice.innerHTML = `${total} $`
+        totalPrice.innerHTML = `${total.toFixed(2)} $`
     } else {
         totalPrice.innerHTML = `${(total * 80_000).toLocaleString()}`
     }
