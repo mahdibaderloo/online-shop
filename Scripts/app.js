@@ -181,6 +181,12 @@ function addToItems (id, title, persianTitle, image, price) {
         image : image,
         price : price
     }
+    if (getLocalStorageItems()) {
+        let localItems = getLocalStorageItems()
+        localItems.forEach( product => {
+            items.push(product)
+        })
+    }
     if (!items.find (item => item.id === id)) {
         items.push(obj)
         setItemInLocalStorage(items)
