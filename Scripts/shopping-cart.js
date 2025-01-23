@@ -1,6 +1,7 @@
 // DOM Elements //
 
 let cartItems = document.querySelector('.cart-items')
+let totalPrice = document.querySelector('.total-price')
 
 
 // Variables //
@@ -75,10 +76,20 @@ function createItem (items) {
 }
 
 
+// Total Price //
+
+function changeTotalPrice () {
+    let total = 0
+    items.forEach (item => {
+        total += item.price
+    })
+    totalPrice.innerHTML = `${total} $`
+}
 
 
 // Window //
 
 window.addEventListener('load', () => {
     addItemsToCart()
+    changeTotalPrice()
 })
