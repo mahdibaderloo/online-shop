@@ -105,7 +105,7 @@
 @media screen and (max-width: 550px) {
     
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
     .container {
         width: 100%;
@@ -113,6 +113,7 @@
         padding-top: 6rem;
         margin: 0;
         height: 100%;
+        border-radius: 0;
     }
     .left {
         width: 100%;
