@@ -31,7 +31,7 @@ function addItemsToCart () {
 
 function createItem (item) {
     if (item.title !== undefined) {
-        if (language.language == 'English' || language.language === null  || language.language === undefined) {
+        if (!language || language.language == 'English') {
             cartItems.insertAdjacentHTML('beforeend' , `
                 <li class="cart-item">
                     <div class="product-content">
