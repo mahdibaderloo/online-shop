@@ -120,7 +120,7 @@ body {
 }
 
 .product-count {
-
+    font-size: 18px;
 }
 
 .change-count {
@@ -128,27 +128,28 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 .count-plus, .count-minus {
     background-color: var(--dark-color);
     color: var(--supplement-color);
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     text-align: center;
-    line-height: 15px;
+    line-height: 18px;
     border-radius: 50%;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .product-price {
-
+    font-size: 18px;
 }
 
 .delete-product {
     cursor: pointer;
-    width: 20px;
+    width: 24px;
 }
 
 .back-to-shop-box {
