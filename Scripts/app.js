@@ -183,6 +183,7 @@ function addToItems (id, title, persianTitle, image, price) {
     }
     if (getLocalStorageItems()) {
         let localItems = getLocalStorageItems()
+        items = []
         localItems.forEach( product => {
             items.push(product)
         })
