@@ -851,7 +851,7 @@ body {
     color: var(--light-color);
 }
 
-.bestseller-btn:hover {
+.bestseller-btn:active {
     background-color: var(--light-color);
     color: var(--dark-color);
     box-shadow: 0 0 4px var(--light-color);
