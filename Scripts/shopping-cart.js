@@ -17,6 +17,12 @@ function getLocalItems () {
     return JSON.parse(localItems)
 }
 
+// Set Items from Local Storage //
+
+function setItemInLocalStorage (items) {
+    localStorage.setItem('product', JSON.stringify(items))
+}
+
 
 // Add Items To Cart //
 
@@ -51,7 +57,7 @@ function createItem (items) {
                             </div>
                         </div>
                         <p class="product-price">${item.price}$</p>
-                        <img src="Images/delete-icon.svg" alt="delete icon" class="delete-product">
+                        <img src="Images/delete-icon.svg" alt="delete icon" class="delete-product" onclick="removeProduct(${item.id})">
                     </li>`)
             } else {
                 cartItems.insertAdjacentHTML('beforeend' , `
@@ -68,11 +74,25 @@ function createItem (items) {
                             </div>
                         </div>
                         <p class="product-price">${(item.price * 80_000).toLocaleString()}</p>
-                        <img style="margin-left:5px" src="Images/delete-icon.svg" alt="delete icon" class="delete-product">
+                        <img style="margin-left:5px" src="Images/delete-icon.svg" alt="delete icon" class="delete-product" onclick="removeProduct(${item.id})">
                     </li>`)
                 }
         }
     })
+}
+
+
+// Remove Item //
+
+function removeProduct (id) {
+    for (let i = 0; i <= items.length; i++) {
+        if (items[i].id === id) {
+            items.splice(i, 1)
+        }
+        setItemInLocalStorage(items)
+        addItemsToCart()
+    }
+
 }
 
 
