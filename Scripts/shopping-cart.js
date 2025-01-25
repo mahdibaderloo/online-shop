@@ -85,14 +85,19 @@ function createItem (items) {
 // Remove Item //
 
 function removeProduct (id) {
-    for (let i = 0; i <= items.length; i++) {
-        if (items[i].id === id) {
-            items.splice(i, 1)
+    let index = 0
+    items.forEach (item => {
+        if (item.id === id) {
+            index = items.indexOf(item)
         }
-        setItemInLocalStorage(items)
-        addItemsToCart()
-    }
-
+    })
+    items.splice(index, 1)
+    localStorage.removeItem('product')
+    setItemInLocalStorage(items)
+    items = []
+    cartItems.innerHTML = ''
+    addItemsToCart()
+    changeTotalPrice()
 }
 
 
