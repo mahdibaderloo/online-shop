@@ -64,16 +64,16 @@ function createItem (items) {
                     <li class="cart-item" dir="rtl">
                         <div class="product-content">
                             <img src="${item.image}" alt="item image" class="product-img">
-                            <p class="product-title">${item.persianTitle}</p>
+                            <p style="font-weight: bold;" class="product-title">${item.persianTitle}</p>
                         </div>
                         <div class="count-box">
-                            <p class="product-count">1</p>
+                            <p style="font-weight: bold;" class="product-count">1</p>
                             <div class="change-count">
-                                <span class="count-plus">+</span>
-                                <span class="count-minus">-</span>
+                                <span style="font-weight: bold;" class="count-plus">+</span>
+                                <span style="font-weight: bold;" class="count-minus">-</span>
                             </div>
                         </div>
-                        <p class="product-price">${(item.price * 80_000).toLocaleString()}</p>
+                        <p style="font-weight: bold;" class="product-price">${(item.price * 80_000).toLocaleString()}</p>
                         <img style="margin-left:5px" src="Images/delete-icon.svg" alt="delete icon" class="delete-product" onclick="removeProduct(${item.id})">
                     </li>`)
                 }
@@ -92,10 +92,13 @@ function removeProduct (id) {
         }
     })
     items.splice(index, 1)
+
     localStorage.removeItem('product')
     setItemInLocalStorage(items)
+
     items = []
     cartItems.innerHTML = ''
+
     addItemsToCart()
     changeTotalPrice()
 }
