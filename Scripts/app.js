@@ -93,6 +93,7 @@ upBtn.addEventListener('click', () => {
 function showProducts () {
     
     productsContainer.innerHTML = ''
+    bestsellers.innerHTML = ''
 
     let randomProduct = []
     let i = products.length
@@ -106,6 +107,7 @@ function showProducts () {
 
     console.log(randomProduct)
     getProducts(randomProduct)
+    getBestsellers(randomProduct)
     showMore.style.visibility = 'visible'
     
 } 
@@ -142,45 +144,35 @@ function getProducts (items) {
 }
 
 
-// Show Bestsellers //
-
-function showBestsellers () {
-
-    for (let i = 0 ; i <= 3 ; i ++) {
-
-        let data = products[Math.floor(Math.random() * products.length)]
-        getBestsellers(data)
-    }
-
-} 
-
-
 // Get Bestsellers Products
 
-function getBestsellers (data) {
+function getBestsellers (items) {
+    for (let i = 0; i < 4; i++) {
+        let data = items[i]
+        if (language.innerHTML == 'English') {
+            bestsellers.insertAdjacentHTML('beforeend', `
+                <li class="bestseller-product" id="${data.id}">
+                    <p class="bestseller-title">${data.title.replace(',', `'`)}</p>
+                    <div class="bestseller-image-box">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
+                    </div>
+                    <p class="bestseller-price">${data.price}$</p>
+                    <button class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                </li>`)
+        }
+        else if (language.innerHTML == 'فارسی') {
+            bestsellers.insertAdjacentHTML('beforeend', `
+                <li class="bestseller-product" id="${data.id}">
+                    <p style="font-family: 'Segoe UI'; font-weight:bold;" class="bestseller-title">${data.persianTitle}</p>
+                    <div class="bestseller-image-box">
+                        <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
+                    </div>
+                    <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
+                    <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                </li>`)
+        }
+    }
 
-    if (language.innerHTML == 'English') {
-        bestsellers.insertAdjacentHTML('beforeend', `
-            <li class="bestseller-product" id="${data.id}">
-                <p class="bestseller-title">${data.title.replace(',', `'`)}</p>
-                <div class="bestseller-image-box">
-                    <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
-                </div>
-                <p class="bestseller-price">${data.price}$</p>
-                <button class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
-            </li>`)
-    }
-    else if (language.innerHTML == 'فارسی') {
-        bestsellers.insertAdjacentHTML('beforeend', `
-            <li class="bestseller-product" id="${data.id}">
-                <p style="font-family: 'Segoe UI'; font-weight:bold;" class="bestseller-title">${data.persianTitle}</p>
-                <div class="bestseller-image-box">
-                    <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
-                </div>
-                <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
-                <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
-            </li>`)
-    }
 }
 
 
@@ -364,7 +356,6 @@ function showCategoryProducts (data) {
 window.addEventListener('load', () => {
     
     showProducts()
-    showBestsellers()
 })
 
 window.addEventListener('click', event => {
