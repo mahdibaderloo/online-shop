@@ -57,13 +57,13 @@ function createItem (items) {
                             <p class="product-title">${item.title.replace(",", "'")}</p>
                         </div>
                         <div class="count-box">
-                            <p class="product-count">1</p>
+                            <p class="product-count">${item.count}</p>
                             <div class="change-count">
                                 <span class="count-plus" onclick="changeProductCount(this, ${item.id}, ${item.price})">+</span>
                                 <span class="count-minus" onclick="changeProductCount(this, ${item.id}, ${item.price})">-</span>
                             </div>
                         </div>
-                        <p class="product-price">${item.price}$</p>
+                        <p class="product-price">${(item.price * item.count).toFixed(2)}$</p>
                         <img src="Images/delete-icon.svg" alt="delete icon" class="delete-product" onclick="removeProduct(${item.id})">
                     </li>`)
             } else {
@@ -74,13 +74,13 @@ function createItem (items) {
                             <p style="font-weight: bold;" class="product-title">${item.persianTitle}</p>
                         </div>
                         <div class="count-box">
-                            <p style="font-weight: bold;" class="product-count">1</p>
+                            <p style="font-weight: bold;" class="product-count">${item.count}</p>
                             <div class="change-count">
                                 <span style="font-weight: bold;" class="count-plus" onclick="changeProductCount(this, ${item.id}, ${item.price})">+</span>
                                 <span style="font-weight: bold;" class="count-minus" onclick="changeProductCount(this, ${item.id}, ${item.price})">-</span>
                             </div>
                         </div>
-                        <p style="font-weight: bold;" class="product-price">${(item.price * 80_000).toLocaleString()}</p>
+                        <p style="font-weight: bold;" class="product-price">${((item.price * item.count) * 80_000).toLocaleString()}</p>
                         <img style="margin-left:5px" src="Images/delete-icon.svg" alt="delete icon" class="delete-product" onclick="removeProduct(${item.id})">
                     </li>`)
                 }
@@ -137,7 +137,7 @@ function changeProductCount (el, id, price) {
     })
     clearProductFromLocalStorage()
     setItemInLocalStorage(items)
-
+    changeTotalPrice()
 }
 
 
@@ -145,8 +145,9 @@ function changeProductCount (el, id, price) {
 
 function changeTotalPrice () {
     let total = 0
-    items.forEach (item => {
-        total += item.price
+    let prices = document.querySelectorAll('.product-price')
+    prices.forEach (item => {
+        total += Number(item.textContent.slice(0, -1))
     })
     if (!language || language.language == 'English') {
         totalPrice.innerHTML = `${total.toFixed(2)} $`
