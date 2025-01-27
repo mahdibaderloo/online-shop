@@ -24,6 +24,13 @@ function setItemInLocalStorage (items) {
 }
 
 
+// Clear Product Item From Local Storage //
+
+function clearProductFromLocalStorage () {
+    localStorage.removeItem('product')
+}
+
+
 // Add Items To Cart //
 
 function addItemsToCart () {
@@ -93,7 +100,7 @@ function removeProduct (id) {
     })
     items.splice(index, 1)
 
-    localStorage.removeItem('product')
+    clearProductFromLocalStorage()
     setItemInLocalStorage(items)
 
     items = []
@@ -128,7 +135,7 @@ function changeProductCount (el, id, price) {
             elementPrice.innerHTML = `${(price * item.count).toFixed(2)}$` 
         }
     })
-    localStorage.removeItem('product')
+    clearProductFromLocalStorage()
     setItemInLocalStorage(items)
 
 }
