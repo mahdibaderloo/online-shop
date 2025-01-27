@@ -210,6 +210,7 @@ function getLocalStorageItems () {
 // Popup //
 
 function showPopup (product) {
+    console.log(product)
 
     popupBox.style.opacity = '1'
     popupBox.style.visibility = 'visible'
@@ -355,7 +356,7 @@ window.addEventListener('click', event => {
     if (event.target.className != 'category-items' && event.target.className != 'nav-link category') {
         categoryItemsClose()
     }
-    if (event.target.id != 'popup' && event.target.className != 'product-image' && event.target.className != 'popup-title' && event.target.className != 'popup-img' && event.target.className != 'popup-box' && event.target.className != 'color-title' && event.target.className != 'popup-colors' && event.target.className != 'color' && event.target.className != 'popup-description' && event.target.className != 'popup-price' && event.target.className != 'color selected') {
+    if (event.target.id != 'popup' && event.target.className != 'product-image' && event.target.className != 'popup-title' && event.target.className != 'popup-img' && event.target.className != 'popup-box' && event.target.className != 'color-title' && event.target.className != 'popup-colors' && event.target.className != 'color' && event.target.className != 'popup-description' && event.target.className != 'popup-price' && event.target.className != 'color selected' && event.target.className != 'bestseller-image') {
         hidePopup()
         deselectColor()
     }
