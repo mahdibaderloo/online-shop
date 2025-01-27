@@ -106,7 +106,11 @@ function removeProduct (id) {
     setItemInLocalStorage(items)
 
     items = []
-    cartItems.innerHTML = `<p class="empty">Shopping cart is empty :(</p>`
+    if (!language || language.language == 'English') {
+        cartItems.innerHTML = `<p class="empty">Shopping cart is empty :(</p>`
+    } else {
+        cartItems.innerHTML = `<p style="font-weight: bold;" class="empty">سبد خرید خالی است :(</p>`
+    }
 
     addItemsToCart()
     changeTotalPrice()
