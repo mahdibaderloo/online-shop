@@ -52,8 +52,8 @@ function createItem (items) {
                         <div class="count-box">
                             <p class="product-count">1</p>
                             <div class="change-count">
-                                <span class="count-plus">+</span>
-                                <span class="count-minus">-</span>
+                                <span class="count-plus" onclick="changeProductCount(this, ${item.id}, ${item.price})">+</span>
+                                <span class="count-minus" onclick="changeProductCount(this, ${item.id}, ${item.price})">-</span>
                             </div>
                         </div>
                         <p class="product-price">${item.price}$</p>
@@ -69,8 +69,8 @@ function createItem (items) {
                         <div class="count-box">
                             <p style="font-weight: bold;" class="product-count">1</p>
                             <div class="change-count">
-                                <span style="font-weight: bold;" class="count-plus">+</span>
-                                <span style="font-weight: bold;" class="count-minus">-</span>
+                                <span style="font-weight: bold;" class="count-plus" onclick="changeProductCount(this, ${item.id}, ${item.price})">+</span>
+                                <span style="font-weight: bold;" class="count-minus" onclick="changeProductCount(this, ${item.id}, ${item.price})">-</span>
                             </div>
                         </div>
                         <p style="font-weight: bold;" class="product-price">${(item.price * 80_000).toLocaleString()}</p>
@@ -101,6 +101,31 @@ function removeProduct (id) {
 
     addItemsToCart()
     changeTotalPrice()
+}
+
+
+// change Product Count //
+
+function changeProductCount (el, id, price) {
+    let elementCount = el.parentElement.parentElement.children[0]
+
+    items.forEach (item => {
+        if (item.id === id) {
+
+            if (el.textContent === '+' && Number(elementCount.textContent) < 6) {
+                item.count++
+            } 
+            else if (el.textContent === '-' && Number(elementCount.textContent) > 0) {
+                item.count--
+                if (item.count === 0) {
+                    removeProduct(id)
+                }
+            }
+            elementCount.innerHTML = item.count
+
+        }
+    })
+
 }
 
 

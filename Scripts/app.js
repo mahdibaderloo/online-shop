@@ -179,7 +179,8 @@ function addToItems (id, title, persianTitle, image, price) {
         title : title,
         persianTitle : persianTitle,
         image : image,
-        price : price
+        price : price,
+        count : 1
     }
     if (getLocalStorageItems()) {
         let localItems = getLocalStorageItems()
