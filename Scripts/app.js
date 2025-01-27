@@ -23,6 +23,7 @@ const popupBox = document.querySelector('.popup-box')
 const popupTitle = document.querySelector('.popup-title')
 const popupImg = document.querySelector('.popup-img')
 const popupPrice = document.querySelector('.popup-price')
+const popupBtn = document.querySelector('.popup-btn')
 const colors = document.querySelector('.popup-colors')
 
 
@@ -109,7 +110,7 @@ function getProducts (data) {
             <li class="product" id="${data.id}">
                 <p class="product-title">${data.title.replace(',', `'`)}</p>
                 <div class="product-img-box">
-                    <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
+                    <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                 </div>
                 <p class="product-price">${data.price}$</p>
                 <button class="add-to-cart" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
@@ -120,7 +121,7 @@ function getProducts (data) {
             <li class="product" id="${data.id}">
                 <p style="height:30px; font-weight:bold;" class="product-title">${data.persianTitle}</p>
                 <div class="product-img-box">
-                    <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this)">
+                    <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                 </div>
                 <p style=" font-size: 18px" class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
                 <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
@@ -151,7 +152,7 @@ function getBestsellers (data) {
             <li class="bestseller-product" id="${data.id}">
                 <p class="bestseller-title">${data.title.replace(',', `'`)}</p>
                 <div class="bestseller-image-box">
-                    <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
+                    <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                 </div>
                 <p class="bestseller-price">${data.price}$</p>
                 <button class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
@@ -162,7 +163,7 @@ function getBestsellers (data) {
             <li class="bestseller-product" id="${data.id}">
                 <p style="font-family: 'Segoe UI'; font-weight:bold;" class="bestseller-title">${data.persianTitle}</p>
                 <div class="bestseller-image-box">
-                    <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this)">
+                    <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                 </div>
                 <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
                 <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
@@ -209,8 +210,7 @@ function getLocalStorageItems () {
 
 // Popup //
 
-function showPopup (product) {
-    console.log(product)
+function showPopup (product, id, title, persianTitle, image, price) {
 
     popupBox.style.opacity = '1'
     popupBox.style.visibility = 'visible'
@@ -224,7 +224,10 @@ function showPopup (product) {
         popupImg.src = product.src
         popupPrice.innerHTML = product.parentNode.parentNode.children[2].textContent
     }
-
+    
+    popupBtn.addEventListener('click', () => {
+        addToItems(id, title, persianTitle, image, price)
+    })
 } 
 
 function hidePopup () {
