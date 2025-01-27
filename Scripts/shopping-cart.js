@@ -107,24 +107,29 @@ function removeProduct (id) {
 // change Product Count //
 
 function changeProductCount (el, id, price) {
+    el.style.userSelect = 'none'
+
     let elementCount = el.parentElement.parentElement.children[0]
+    let elementPrice = el.parentElement.parentElement.parentElement.children[2]
 
     items.forEach (item => {
         if (item.id === id) {
 
-            if (el.textContent === '+' && Number(elementCount.textContent) < 6) {
+            if (el.textContent === '+' && item.count < 5) {
                 item.count++
             } 
-            else if (el.textContent === '-' && Number(elementCount.textContent) > 0) {
+            else if (el.textContent === '-' && item.count > 0) {
                 item.count--
                 if (item.count === 0) {
                     removeProduct(id)
                 }
             }
             elementCount.innerHTML = item.count
-
+            elementPrice.innerHTML = `${(price * item.count).toFixed(2)}$` 
         }
     })
+    localStorage.removeItem('product')
+    setItemInLocalStorage(items)
 
 }
 
