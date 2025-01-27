@@ -138,6 +138,7 @@ body {
 }
 
 .count-plus, .count-minus {
+    user-select: none;
     background-color: var(--dark-color);
     color: var(--supplement-color);
     width: 18px;

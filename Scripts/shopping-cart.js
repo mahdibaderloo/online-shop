@@ -114,8 +114,6 @@ function removeProduct (id) {
 // change Product Count //
 
 function changeProductCount (el, id, price) {
-    el.style.userSelect = 'none'
-
     let elementCount = el.parentElement.parentElement.children[0]
     let elementPrice = el.parentElement.parentElement.parentElement.children[2]
 
@@ -131,8 +129,14 @@ function changeProductCount (el, id, price) {
                     removeProduct(id)
                 }
             }
-            elementCount.innerHTML = item.count
-            elementPrice.innerHTML = `${(price * item.count).toFixed(2)}$` 
+
+            if (!language || language.language == 'English') {
+                elementCount.innerHTML = item.count
+                elementPrice.innerHTML = `${(price * item.count).toFixed(2)}$` 
+            } else {
+                elementCount.innerHTML = item.count
+                elementPrice.innerHTML = `${((price * item.count) * 80_000).toLocaleString()}` 
+            }
         }
     })
     clearProductFromLocalStorage()
@@ -147,13 +151,14 @@ function changeTotalPrice () {
     let total = 0
     let prices = document.querySelectorAll('.product-price')
     prices.forEach (item => {
-        total += Number(item.textContent.slice(0, -1))
+        if (!language || language.language == 'English') {
+            total += Number(item.textContent.slice(0, -1))
+            totalPrice.innerHTML = `${total.toFixed(2)} $`
+        } else {
+            total += Number(item.textContent.replaceAll(',',''))
+            totalPrice.innerHTML = `${(total).toLocaleString()}`
+        }
     })
-    if (!language || language.language == 'English') {
-        totalPrice.innerHTML = `${total.toFixed(2)} $`
-    } else {
-        totalPrice.innerHTML = `${(total * 80_000).toLocaleString()}`
-    }
 }
 
 
