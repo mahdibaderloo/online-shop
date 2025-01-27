@@ -63,7 +63,7 @@ function createItem (items) {
                                 <span class="count-minus" onclick="changeProductCount(this, ${item.id}, ${item.price})">-</span>
                             </div>
                         </div>
-                        <p class="product-price">${(item.price * item.count).toFixed(2)}$</p>
+                        <p class="product-price">${(item.price * item.count).toFixed(2)}<span>$</span></p>
                         <img src="Images/delete-icon.svg" alt="delete icon" class="delete-product" onclick="removeProduct(${item.id})">
                     </li>`)
             } else {
@@ -159,6 +159,9 @@ function changeTotalPrice () {
             totalPrice.innerHTML = `${(total).toLocaleString()}`
         }
     })
+    if (total === 0) {
+        totalPrice.innerHTML = total
+    }
 }
 
 
