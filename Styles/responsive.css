@@ -221,10 +221,6 @@
     .product:hover {
         transform: unset;
     }
-    .add-to-cart:hover {
-        box-shadow: 0 0 6px var(--dark-color);
-        background-color: transparent;
-    }
     .category-section-item {
         width: 130px;
         height: 150px;
