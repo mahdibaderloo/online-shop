@@ -2,6 +2,7 @@
 
 let cartItems = document.querySelector('.cart-items')
 let totalPrice = document.querySelector('.total-price')
+let empty = document.querySelector('.empty')
 
 
 // Variables //
@@ -39,6 +40,7 @@ function addItemsToCart () {
         items.push(item)
         createItem(items)
     });
+    emptyDisplay()
 }
 
 
@@ -104,7 +106,7 @@ function removeProduct (id) {
     setItemInLocalStorage(items)
 
     items = []
-    cartItems.innerHTML = ''
+    cartItems.innerHTML = `<p class="empty">Shopping cart is empty :(</p>`
 
     addItemsToCart()
     changeTotalPrice()
@@ -162,6 +164,19 @@ function changeTotalPrice () {
     if (total === 0) {
         totalPrice.innerHTML = total
     }
+    emptyDisplay()
+}
+
+
+// Empty Display //
+
+function emptyDisplay () {
+    let localItems = getLocalItems()
+    if (localItems.length === 0) {
+        empty.style.display = 'flex'
+    } else {
+        empty.style.display = 'none'
+    }
 }
 
 
@@ -170,4 +185,5 @@ function changeTotalPrice () {
 window.addEventListener('load', () => {
     addItemsToCart()
     changeTotalPrice()
+    emptyDisplay()
 })
