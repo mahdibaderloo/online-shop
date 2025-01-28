@@ -30,6 +30,7 @@ const colors = document.querySelector('.popup-colors')
 // Variables 
 
 let items = []
+let randomProduct = []
 let NumberOfProducts = 20
 
 
@@ -95,7 +96,6 @@ function showProducts () {
     productsContainer.innerHTML = ''
     bestsellers.innerHTML = ''
 
-    let randomProduct = []
     let i = products.length
     let index = 0
 
@@ -105,7 +105,10 @@ function showProducts () {
         products.splice(index,1);
     }
 
-    console.log(randomProduct)
+    if (NumberOfProducts === 70) {
+        showMore.style.display = 'none'
+    }
+
     getProducts(randomProduct)
     getBestsellers(randomProduct)
     showMore.style.visibility = 'visible'
@@ -174,6 +177,21 @@ function getBestsellers (items) {
     }
 
 }
+
+
+// Show More // 
+
+showMore.addEventListener ('click', () => {
+    if (NumberOfProducts === 70) {
+        showMore.style.display = 'none'
+    }
+    else {
+        NumberOfProducts += 10
+        showProducts()
+        showMore.style.display = 'block'
+        productsContainer.style.marginBottom = '0rem';
+    }
+})
 
 
 // Add To Items Array
@@ -289,7 +307,7 @@ function showCategoryProducts (data) {
 
     switch (data) {
         case 'men':
-            products.forEach (product => {
+            randomProduct.forEach (product => {
                 if (product.category === 'men') {
                     getProducts(product)
                 }
@@ -297,7 +315,7 @@ function showCategoryProducts (data) {
             break;
 
         case 'women':
-            products.forEach (product => {
+            randomProduct.forEach (product => {
                 if (product.category === 'women') {
                     getProducts(product)
                 }
@@ -305,7 +323,7 @@ function showCategoryProducts (data) {
             break;
 
         case 'kids':
-            products.forEach (product => {
+            randomProduct.forEach (product => {
                 if (product.category === 'kids') {
                     getProducts(product)
                 }
@@ -313,7 +331,7 @@ function showCategoryProducts (data) {
             break;
 
         case 'shoes':
-            products.forEach (product => {
+            randomProduct.forEach (product => {
                 if (product.category === 'shoes') {
                     getProducts(product)
                 }
@@ -321,7 +339,7 @@ function showCategoryProducts (data) {
             break;
 
         case 'accessory':
-            products.forEach (product => {
+            randomProduct.forEach (product => {
                 if (product.category === 'accessory') {
                     getProducts(product)
                 }
@@ -329,7 +347,7 @@ function showCategoryProducts (data) {
             break;
 
         case 'hat':
-            products.forEach (product => {
+            randomProduct.forEach (product => {
                 if (product.category === 'hat') {
                     getProducts(product)
                 }
@@ -337,7 +355,7 @@ function showCategoryProducts (data) {
             break;
 
         case 'glasses':
-            products.forEach (product => {
+            randomProduct.forEach (product => {
                 if (product.category === 'glasses') {
                     getProducts(product)
                 }
@@ -365,6 +383,10 @@ window.addEventListener('click', event => {
     if (event.target.id != 'popup' && event.target.className != 'product-image' && event.target.className != 'popup-title' && event.target.className != 'popup-img' && event.target.className != 'popup-box' && event.target.className != 'color-title' && event.target.className != 'popup-colors' && event.target.className != 'color' && event.target.className != 'popup-description' && event.target.className != 'popup-price' && event.target.className != 'color selected' && event.target.className != 'bestseller-image') {
         hidePopup()
         deselectColor()
+    }
+    if (NumberOfProducts === 70) {
+        showMore.style.display = 'none'
+        productsContainer.style.marginBottom = '2rem';
     }
 })
 
