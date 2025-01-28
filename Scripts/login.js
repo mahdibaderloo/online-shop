@@ -22,7 +22,7 @@ function setUserInLocalStorage (username, password) {
         username : username,
         password : password
     }
-    localStorage.setItem('username', JSON.stringify(user))
+    localStorage.setItem('user', JSON.stringify(user))
 }
 
 
@@ -77,5 +77,14 @@ loginNow.addEventListener('click', () => {
         let passwordValue = passwordInput.value
 
         setUserInLocalStorage(usernameValue, passwordValue)
+        emptyInput()
     }
 })
+
+
+// Empty Input //
+
+function emptyInput () {
+    usernameInput.value = ''
+    passwordInput.value = ''
+}
