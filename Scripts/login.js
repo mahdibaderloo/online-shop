@@ -6,6 +6,8 @@ const switchTitle = document.querySelector('.switch')
 const loginNow = document.querySelector('.login-now')
 const googleLogin = document.querySelector('.google-login-box')
 const facebookLogin = document.querySelector('.facebook-login-box')
+const usernameInput = document.querySelector('.username-input')
+const passwordInput = document.querySelector('.password-input')
 
 
 // Language //
@@ -63,5 +65,17 @@ switchLink.addEventListener('click', event => {
             googleLogin.style.display = 'flex'
             facebookLogin.style.display = 'flex'
         }
+    }
+})
+
+
+// Sign Up //
+
+loginNow.addEventListener('click', () => {
+    if (loginNow.textContent === 'Sign Up Now' || loginNow.textContent === 'ثبت نام') {
+        let usernameValue = usernameInput.value
+        let passwordValue = passwordInput.value
+
+        setUserInLocalStorage(usernameValue, passwordValue)
     }
 })
