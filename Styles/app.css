@@ -224,6 +224,33 @@ body {
 
 
 
+/********************* Toast *********************/
+
+.toast-box {
+    width: 220px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    background-color: var(--supplement-color);
+    border-radius: 15px;
+    padding: 10px;
+    position: fixed;
+    left: 0.5rem;
+    top: 5rem;
+    z-index: 100;
+}
+
+.toast-icon {
+    width: 35px;
+}
+
+.toast-title {
+
+}
+
+
+
 /********************* Navbar *********************/
 
 .navbar {

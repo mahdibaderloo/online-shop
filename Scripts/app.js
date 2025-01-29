@@ -130,7 +130,7 @@ function getProducts (data) {
                     <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                 </div>
                 <p class="product-price">${data.price}$</p>
-                <button class="add-to-cart" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+                <button class="add-to-cart" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price}), showToast('${data.title}')">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
             </li>`)
     }
     else if (language.innerHTML == 'فارسی') {
@@ -141,7 +141,7 @@ function getProducts (data) {
                     <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                 </div>
                 <p style=" font-size: 18px" class="product-price">${(data.price * 80000).toLocaleString()} تومان</p>
-                <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
+                <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price}), showToast('${data.persianTitle}')">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
             </li>`)
     }
 }
@@ -160,7 +160,7 @@ function getBestsellers (items) {
                         <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                     </div>
                     <p class="bestseller-price">${data.price}$</p>
-                    <button class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                    <button class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price}), showToast($'{data.title}')">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)
         }
         else if (language.innerHTML == 'فارسی') {
@@ -171,7 +171,7 @@ function getBestsellers (items) {
                         <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                     </div>
                     <p class="bestseller-price">${(data.price * 80000).toLocaleString()} تومان</p>
-                    <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                    <button style="font-family: 'Segoe UI'; font-weight:bold; letter-spacing:0px; font-size: 14px" class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price}), showToast('${data.persianTitle}')">افزودن به سبد خرید <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)
         }
     }
@@ -368,6 +368,13 @@ function showCategoryProducts (data) {
 }
 
 
+// Toast //
+
+function showToast (title) {
+    console.log(title)
+}
+
+
 
 // Window //
 
@@ -406,3 +413,4 @@ window.addEventListener('scroll', () => {
 window.showPopup = showPopup
 window.deselectColor = deselectColor
 window.addToItems = addToItems
+window.showToast = showToast
