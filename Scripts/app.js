@@ -25,6 +25,8 @@ const popupImg = document.querySelector('.popup-img')
 const popupPrice = document.querySelector('.popup-price')
 const popupBtn = document.querySelector('.popup-btn')
 const colors = document.querySelector('.popup-colors')
+const toast = document.querySelector('.toast-box')
+const toastTitle = document.querySelector('.toast-title')
 
 
 // Variables 
@@ -249,6 +251,11 @@ function showPopup (product, id, title, persianTitle, image, price) {
     
     popupBtn.addEventListener('click', () => {
         addToItems(id, title, persianTitle, image, price)
+        if (language.innerHTML === 'English') {
+            showToast(title)
+        } else {
+            showToast(persianTitle)
+        }
     })
 } 
 
@@ -371,7 +378,19 @@ function showCategoryProducts (data) {
 // Toast //
 
 function showToast (title) {
-    console.log(title)
+    if (language.innerHTML == 'English') {
+        toast.style.left = '0.5rem'
+        toastTitle.innerHTML = `${title} added to cart`
+        setTimeout(() => {
+            toast.style.left = '-30rem'
+        }, 3000)
+    } else {
+        toast.style.right = '0.5rem'
+        toastTitle.innerHTML = `${title} به سبد خرید اضافه شد`
+        setTimeout(() => {
+            toast.style.right = '-30rem'
+        }, 3000)
+    }
 }
 
 
