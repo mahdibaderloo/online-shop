@@ -182,6 +182,11 @@
     .popup-img {
         width: 85%;
     }
+    .toast-box {
+        width: 91%;
+        top: 8rem;
+        margin-right: 0.5rem;
+    }
     .header {
         top: 100px;
         height: 220px;

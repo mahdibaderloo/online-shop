@@ -94,7 +94,7 @@ upBtn.addEventListener('click', () => {
 // Show Products //
 
 function showProducts () {
-    
+
     productsContainer.innerHTML = ''
     bestsellers.innerHTML = ''
 
@@ -162,7 +162,7 @@ function getBestsellers (items) {
                         <img src="${data.image}" alt="Product Image" class="bestseller-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                     </div>
                     <p class="bestseller-price">${data.price}$</p>
-                    <button class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price}), showToast($'{data.title}')">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
+                    <button class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price}), showToast('${data.title}')">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)
         }
         else if (language.innerHTML == 'فارسی') {
@@ -380,15 +380,19 @@ function showCategoryProducts (data) {
 function showToast (title) {
     if (language.innerHTML == 'English') {
         toast.style.left = '0.5rem'
+        toast.style.opacity = '1'
         toastTitle.innerHTML = `${title} added to cart`
         setTimeout(() => {
             toast.style.left = '-30rem'
+            toast.style.opacity = '0'
         }, 3000)
     } else {
         toast.style.right = '0.5rem'
+        toast.style.opacity = '1'
         toastTitle.innerHTML = `${title} به سبد خرید اضافه شد`
         setTimeout(() => {
             toast.style.right = '-30rem'
+            toast.style.opacity = '0'
         }, 3000)
     }
 }
@@ -398,7 +402,7 @@ function showToast (title) {
 // Window //
 
 window.addEventListener('load', () => {
-    
+
     showProducts()
 })
 

@@ -7,6 +7,18 @@ const languageOptions = document.querySelector('.language-options')
 const languageLinks = document.querySelectorAll('.language-link')
 
 
+// Change Language With Browser Setting //
+
+// changeBrowserLanguage()
+
+// function changeBrowserLanguage () {
+//     let browserLanguage = navigator.language
+//     if (browserLanguage === 'fa') {
+//         document.location.href = 'app-persian.html'
+//     } else {
+//         document.location.href = 'index.html'
+//     }
+// }
 //  User's chosen language //
 
 languageDisplay.addEventListener('click', () => {
