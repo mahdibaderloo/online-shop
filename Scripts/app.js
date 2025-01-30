@@ -3,6 +3,7 @@ import { products } from "../Scripts/data-base.js";
 
 // DOM Elements //
 
+const loginTitle = document.querySelector('.login-link')
 const categoryBtn = document.querySelector('.category')
 const categoryItems = document.querySelector('.category-items')
 const categoryAngle = document.querySelector('.category-angle')
@@ -398,11 +399,21 @@ function showToast (title) {
 }
 
 
+// Login Title //
+
+function loginCheck () {
+    let username = document.cookie
+    if (username) {
+    loginTitle.innerHTML = username.slice(9)
+    }
+}
+
+
 
 // Window //
 
 window.addEventListener('load', () => {
-
+    loginCheck()
     showProducts()
 })
 
