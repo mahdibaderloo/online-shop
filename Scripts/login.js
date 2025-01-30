@@ -9,6 +9,8 @@ const facebookLogin = document.querySelector('.facebook-login-box')
 const usernameInput = document.querySelector('.username-input')
 const passwordInput = document.querySelector('.password-input')
 const toast = document.querySelector('.toast-box')
+const toastTitle = document.querySelector('.toast-title')
+const toastIcon = document.querySelector('.toast-icon')
 
 
 // Language //
@@ -71,10 +73,15 @@ switchLink.addEventListener('click', event => {
 loginNow.addEventListener('click', () => {
     if (loginNow.textContent === 'Sign Up Now' || loginNow.textContent === 'ثبت نام') {
         let usernameValue = usernameInput.value
+        let passwordValue = passwordInput.value
 
-        setCookie(usernameValue)
-        showToast()
-        emptyInput()
+        if (usernameValue.trim() || passwordValue.trim()) {
+            setCookie(usernameValue)
+            showToast()
+            emptyInput()
+        } else {
+            showWarningToast()
+        }
     }
 })
 
@@ -96,6 +103,21 @@ function showToast () {
             toast.style.right = '-30rem'
             toast.style.opacity = '0'
         }, 3000)
+    }
+}
+
+
+// Warning Toast //
+
+function showWarningToast () {
+    showToast()
+    toast.style.backgroundColor = 'tomato'
+    toastIcon.src = 'Images/warning.svg'
+
+    if (!language || language.language == 'English') {
+        toastTitle.innerHTML = 'Enter username/password'
+    } else {
+        toastTitle.innerHTML = 'نام کاربری/رمز عبور وارد نشده'
     }
 }
 
