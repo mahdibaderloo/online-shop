@@ -197,7 +197,7 @@ function showToast (title, persianTitle) {
     if (!language || language.language == 'English') {
         toast.style.left = '0.5rem'
         toast.style.opacity = '1'
-        toastTitle.innerHTML = `${title} removed from cart`
+        toastTitle.innerHTML = `${title.replace(',', "'")} removed from cart`
         setTimeout(() => {
             toast.style.left = '-30rem'
             toast.style.opacity = '0'

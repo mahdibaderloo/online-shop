@@ -396,7 +396,7 @@ function showToast (title) {
     if (language.innerHTML == 'English') {
         toast.style.left = '0.5rem'
         toast.style.opacity = '1'
-        toastTitle.innerHTML = `${title} added to cart`
+        toastTitle.innerHTML = `${title.replace(',', "'")} added to cart`
         setTimeout(() => {
             toast.style.left = '-30rem'
             toast.style.opacity = '0'
