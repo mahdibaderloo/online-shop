@@ -41,7 +41,9 @@
     .right {
         height: 10%;
         width: 100%;
+        border-top-left-radius: 0;
         border-top-right-radius: 0;
+        border-bottom-right-radius: 25px;
         border-bottom-left-radius: 25px;
         padding: 0;
         display: flex;
@@ -62,6 +64,10 @@
     
     .container {
 
+    }
+    .toast-box {
+        width: 91%;
+        top: 6rem;
     }
     .login-title {
         font-size: 22px;
