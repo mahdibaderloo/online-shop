@@ -1,8 +1,10 @@
 // DOM Elements //
 
-let cartItems = document.querySelector('.cart-items')
-let totalPrice = document.querySelector('.total-price')
-let empty = document.querySelector('.empty')
+const cartItems = document.querySelector('.cart-items')
+const totalPrice = document.querySelector('.total-price')
+const empty = document.querySelector('.empty')
+const toast = document.querySelector('.toast-box')
+const toastTitle = document.querySelector('.toast-title')
 
 
 // Variables //
@@ -95,12 +97,17 @@ function createItem (items) {
 
 function removeProduct (id) {
     let index = 0
+    let title = ''
+    let persianTitle = ''
     items.forEach (item => {
         if (item.id === id) {
             index = items.indexOf(item)
+            title = item.title
+            persianTitle = item.persianTitle
         }
     })
     items.splice(index, 1)
+    showToast(title, persianTitle)
 
     clearProductFromLocalStorage()
     setItemInLocalStorage(items)
@@ -180,6 +187,29 @@ function emptyDisplay () {
         empty.style.display = 'flex'
     } else {
         empty.style.display = 'none'
+    }
+}
+
+
+// Toast //
+
+function showToast (title, persianTitle) {
+    if (!language || language.language == 'English') {
+        toast.style.left = '0.5rem'
+        toast.style.opacity = '1'
+        toastTitle.innerHTML = `${title} removed from cart`
+        setTimeout(() => {
+            toast.style.left = '-30rem'
+            toast.style.opacity = '0'
+        }, 3000)
+    } else {
+        toast.style.right = '0.5rem'
+        toast.style.opacity = '1'
+        toastTitle.innerHTML = `${persianTitle} از سبد خرید حذف شد`
+        setTimeout(() => {
+            toast.style.right = '-30rem'
+            toast.style.opacity = '0'
+        }, 3000)
     }
 }
 

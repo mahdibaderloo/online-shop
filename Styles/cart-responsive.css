@@ -150,6 +150,10 @@
     .support-icon {
         width: 25px;
     }
+    .toast-box {
+        width: 91%;
+        top: 6rem;
+    }
     .cart-title {
         font-size: 20px;
     }
