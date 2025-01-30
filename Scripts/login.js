@@ -17,12 +17,8 @@ let language = JSON.parse(localStorage.getItem('language'))
 
 // Set user in local storage //
 
-function setUserInLocalStorage (username, password) {
-    user = {
-        username : username,
-        password : password
-    }
-    localStorage.setItem('user', JSON.stringify(user))
+function setCookie (username) {
+   document.cookie = `username=${username}`
 }
 
 
@@ -74,9 +70,8 @@ switchLink.addEventListener('click', event => {
 loginNow.addEventListener('click', () => {
     if (loginNow.textContent === 'Sign Up Now' || loginNow.textContent === 'ثبت نام') {
         let usernameValue = usernameInput.value
-        let passwordValue = passwordInput.value
 
-        setUserInLocalStorage(usernameValue, passwordValue)
+        setCookie(usernameValue)
         emptyInput()
     }
 })
