@@ -17,11 +17,18 @@ const toastIcon = document.querySelector('.toast-icon')
 
 let language = JSON.parse(localStorage.getItem('language'))
 
-
 // Set cookie //
 
 function setCookie (username) {
-   document.cookie = `username=${username}`
+   if (document.cookie.slice(9) === username) {
+        reSignUp()
+    } else {
+        document.cookie = `username=${username}`
+        setTimeout(() => {
+            emptyInput()
+            changeLocation()
+        }, 3000);
+   }
 }
 
 
@@ -78,10 +85,6 @@ loginNow.addEventListener('click', () => {
         if (usernameValue.trim() && passwordValue.trim()) {
             setCookie(usernameValue)
             showToast()
-            setTimeout(() => {
-                changeLocation()
-            }, 3000);
-            emptyInput()
         } else {
             showWarningToast()
         }
@@ -132,6 +135,21 @@ function showWarningToast () {
         toastTitle.innerHTML = 'Enter username/password'
     } else {
         toastTitle.innerHTML = 'نام کاربری/رمز عبور وارد نشده'
+    }
+}
+
+
+// Re-Sign Up //
+
+function reSignUp () {
+    showToast()
+    toast.style.backgroundColor = 'tomato'
+    toastIcon.src = 'Images/warning.svg'
+
+    if (!language || language.language == 'English') {
+        toastTitle.innerHTML = 'You already Signed Up'
+    } else {
+        toastTitle.innerHTML = 'شما قبلا ثبت نام کردید'
     }
 }
 
