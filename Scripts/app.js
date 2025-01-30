@@ -4,6 +4,8 @@ import { products } from "../Scripts/data-base.js";
 // DOM Elements //
 
 const loginTitle = document.querySelector('.login-link')
+const searchInput = document.querySelector('.search-input')
+const searchResults = document.querySelector('.search-results')
 const categoryBtn = document.querySelector('.category')
 const categoryItems = document.querySelector('.category-items')
 const categoryAngle = document.querySelector('.category-angle')
@@ -35,6 +37,18 @@ const toastTitle = document.querySelector('.toast-title')
 let items = []
 let randomProduct = []
 let NumberOfProducts = 20
+
+
+// Search //
+
+searchInput.addEventListener('input', () => {
+    if (searchInput.value !== '') {
+        searchResults.style.display = 'flex'
+        searchResults.innerHTML = `<li class="search-result" onclick="selectResult(this)">${searchInput.value}</li>`
+    } else {
+        searchResults.style.display = 'none'
+    }
+})
 
 
 // Category (Navbar) //
