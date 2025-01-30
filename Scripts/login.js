@@ -75,10 +75,13 @@ loginNow.addEventListener('click', () => {
         let usernameValue = usernameInput.value
         let passwordValue = passwordInput.value
 
-        if (usernameValue.trim() || passwordValue.trim()) {
+        if (usernameValue.trim() && passwordValue.trim()) {
             setCookie(usernameValue)
             showToast()
             emptyInput()
+            setTimeout(() => {
+                changeLocation()
+            }, 3000);
         } else {
             showWarningToast()
         }
@@ -95,14 +98,25 @@ function showToast () {
         setTimeout(() => {
             toast.style.left = '-30rem'
             toast.style.opacity = '0'
-        }, 3000)
+        }, 2000)
     } else {
         toast.style.right = '0.5rem'
         toast.style.opacity = '1'
         setTimeout(() => {
             toast.style.right = '-30rem'
             toast.style.opacity = '0'
-        }, 3000)
+        }, 2000)
+    }
+}
+
+
+// Change Location //
+
+function changeLocation () {
+    if (!language || language.language == 'English') {
+        document.location.href = 'index.html'
+    } else {
+        document.location.href = 'app-persian.html'
     }
 }
 
