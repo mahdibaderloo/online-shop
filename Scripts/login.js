@@ -78,10 +78,10 @@ loginNow.addEventListener('click', () => {
         if (usernameValue.trim() && passwordValue.trim()) {
             setCookie(usernameValue)
             showToast()
-            emptyInput()
             setTimeout(() => {
                 changeLocation()
             }, 3000);
+            emptyInput()
         } else {
             showWarningToast()
         }
