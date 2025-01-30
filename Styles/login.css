@@ -54,6 +54,35 @@ body {
 
 
 
+/********************* Toast *********************/
+
+.toast-box {
+    width: fit-content;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 10px;
+    background-color: var(--supplement-color);
+    border-radius: 15px;
+    padding: 10px;
+    position: fixed;
+    left: -30rem;
+    top: 5rem;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.toast-icon {
+    width: 35px;
+}
+
+.toast-title {
+
+}
+
+
+
 /******************* Left *******************/
 
 .left {

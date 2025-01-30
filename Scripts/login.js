@@ -8,6 +8,7 @@ const googleLogin = document.querySelector('.google-login-box')
 const facebookLogin = document.querySelector('.facebook-login-box')
 const usernameInput = document.querySelector('.username-input')
 const passwordInput = document.querySelector('.password-input')
+const toast = document.querySelector('.toast-box')
 
 
 // Language //
@@ -15,7 +16,7 @@ const passwordInput = document.querySelector('.password-input')
 let language = JSON.parse(localStorage.getItem('language'))
 
 
-// Set user in local storage //
+// Set cookie //
 
 function setCookie (username) {
    document.cookie = `username=${username}`
@@ -72,10 +73,31 @@ loginNow.addEventListener('click', () => {
         let usernameValue = usernameInput.value
 
         setCookie(usernameValue)
+        showToast()
         emptyInput()
     }
 })
 
+
+// Toast //
+
+function showToast () {
+    if (!language || language.language == 'English') {
+        toast.style.left = '0.5rem'
+        toast.style.opacity = '1'
+        setTimeout(() => {
+            toast.style.left = '-30rem'
+            toast.style.opacity = '0'
+        }, 3000)
+    } else {
+        toast.style.right = '0.5rem'
+        toast.style.opacity = '1'
+        setTimeout(() => {
+            toast.style.right = '-30rem'
+            toast.style.opacity = '0'
+        }, 3000)
+    }
+}
 
 // Empty Input //
 
