@@ -17,6 +17,7 @@ const toastIcon = document.querySelector('.toast-icon')
 
 let language = JSON.parse(localStorage.getItem('language'))
 
+
 // Set cookie //
 
 function setCookie (username) {
