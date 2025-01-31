@@ -45,10 +45,18 @@ searchInput.addEventListener('keyup', () => {
     let searchValue = searchInput.value
     if (searchValue) {
         searchResults.style.display = 'flex'
-        let filterWords = randomProduct.filter ( product => { 
-            return product.title.toLowerCase().startsWith(searchValue) 
-        })
-        suggestionWordsGenerator(filterWords)
+
+        let filteredWords = []
+        if (language.innerHTML === 'English') {
+            filteredWords = randomProduct.filter ( product => { 
+                return product.title.toLowerCase().startsWith(searchValue) 
+            })
+        } else {
+            filteredWords = randomProduct.filter ( product => { 
+                return product.persianTitle.toLowerCase().startsWith(searchValue) 
+            })
+        }
+        suggestionWordsGenerator(filteredWords)
 
     } else {
         searchResults.style.display = 'none'
@@ -60,9 +68,18 @@ searchInput.addEventListener('keyup', () => {
 // suggestion Words Generator //
 
 function suggestionWordsGenerator (words) {
-    let wordsArray = words.map( word => {
-        return `<li class="search-result" onclick="selectResult(this)">${word.title.replace(',', "'")}</li>`
-    })
+    let wordsArray = []
+    if (language.innerHTML === 'English') {
+        wordsArray = words.map( word => {
+            return `<li class="search-result" onclick="selectResult(this)">${word.title.replace(',', "'")}</li>`
+        })
+    } else {
+        wordsArray = words.map( word => {
+            return `<li class="search-result" onclick="selectResult(this)">${word.persianTitle}</li>`
+        })
+    }
+
+
     let customWord = null
 
     if (wordsArray.length === 0) {
