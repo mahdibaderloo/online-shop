@@ -399,7 +399,7 @@ categoryTitles.forEach (category => {
 
 function showCategoryProducts (data) {
     productsContainer.innerHTML = ''
-    showMore.style.visibility = 'hidden'
+    showMore.innerHTML = 'get all products'
     window.scrollTo(250, 250)
 
     switch (data) {
