@@ -41,14 +41,38 @@ let NumberOfProducts = 20
 
 // Search //
 
-searchInput.addEventListener('input', () => {
-    if (searchInput.value !== '') {
+searchInput.addEventListener('keyup', () => {
+    let searchValue = searchInput.value
+    if (searchValue) {
         searchResults.style.display = 'flex'
-        searchResults.innerHTML = `<li class="search-result" onclick="selectResult(this)">${searchInput.value}</li>`
+        let filterWords = randomProduct.filter ( product => { 
+            return product.title.toLowerCase().startsWith(searchValue) 
+        })
+        suggestionWordsGenerator(filterWords)
+
     } else {
         searchResults.style.display = 'none'
+        searchResults.innerHTML = ''
     }
 })
+
+
+// suggestion Words Generator //
+
+function suggestionWordsGenerator (words) {
+    let wordsArray = words.map( word => {
+        return `<li class="search-result" onclick="selectResult(this)">${word.title.replace(',', "'")}</li>`
+    })
+    let customWord = null
+
+    if (wordsArray.length === 0) {
+        searchResults.innerHTML = ''
+        customWord = `<li class="search-result" onclick="selectResult(this)">${searchInput.value}</li>`
+    } else {
+        customWord = wordsArray.join('')
+    }
+    searchResults.innerHTML = customWord
+}
 
 
 // Category (Navbar) //
