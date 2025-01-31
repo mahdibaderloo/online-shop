@@ -6,6 +6,7 @@ import { products } from "../Scripts/data-base.js";
 const loginTitle = document.querySelector('.login-link')
 const searchInput = document.querySelector('.search-input')
 const searchResults = document.querySelector('.search-results')
+const searchSubmit = document.querySelector('.search-submit')
 const categoryBtn = document.querySelector('.category')
 const categoryItems = document.querySelector('.category-items')
 const categoryAngle = document.querySelector('.category-angle')
@@ -101,6 +102,22 @@ function selectResult (el) {
 }
 
 
+// Search Submit //
+
+searchSubmit.addEventListener('click', () => {
+    let inputValue = searchInput.value
+    let filterProducts = randomProduct.filter ( product => {
+        return product.title === inputValue.replace("'", ',')
+    })
+    filterProducts.forEach (products => {
+        productsContainer.innerHTML = ''
+        window.scrollTo(250, 250)
+        getProducts(products)
+        showMore.innerHTML = 'get all products'
+    })
+})
+
+
 // Category (Navbar) //
 
 function categoryItemsOpen () {
@@ -192,7 +209,7 @@ function getProducts (data) {
     if (language.innerHTML == 'English') {
         productsContainer.insertAdjacentHTML('beforeend', `
             <li class="product" id="${data.id}">
-                <p class="product-title">${data.title.replace(',', `'`)}</p>
+                <p class="product-title">${data.title.replace(",", "'")}</p>
                 <div class="product-img-box">
                     <img src="${data.image}" alt="Product Image" class="product-image" onclick="showPopup(this, ${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price})">
                 </div>
@@ -249,6 +266,12 @@ function getBestsellers (items) {
 // Show More // 
 
 showMore.addEventListener ('click', () => {
+    if (language.textContent === 'English') {
+        showMore.innerHTML = 'show more...'
+    } else {
+        showMore.innerHTML = 'بیشتر...'
+    }
+
     if (NumberOfProducts === 70) {
         showMore.style.display = 'none'
     }
@@ -258,6 +281,8 @@ showMore.addEventListener ('click', () => {
         showMore.style.display = 'block'
         productsContainer.style.marginBottom = '0rem';
     }
+
+    searchInput.value = ''
 })
 
 
