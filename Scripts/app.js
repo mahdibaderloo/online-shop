@@ -75,6 +75,15 @@ function suggestionWordsGenerator (words) {
 }
 
 
+// Select Search Result //
+
+function selectResult (el) {
+    searchInput.value = el.textContent
+    searchResults.textContent = ''
+    searchResults.style.display = 'none'
+}
+
+
 // Category (Navbar) //
 
 function categoryItemsOpen () {
@@ -486,3 +495,4 @@ window.showPopup = showPopup
 window.deselectColor = deselectColor
 window.addToItems = addToItems
 window.showToast = showToast
+window.selectResult = selectResult
