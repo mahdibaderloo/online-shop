@@ -43,7 +43,7 @@ let NumberOfProducts = 20
 // Search //
 
 searchInput.addEventListener('keyup', () => {
-    let searchValue = searchInput.value
+    let searchValue = searchInput.value.toLowerCase().replace("'", ",")
     if (searchValue) {
         searchResults.style.display = 'flex'
 
