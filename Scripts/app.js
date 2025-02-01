@@ -40,6 +40,17 @@ let randomProduct = []
 let NumberOfProducts = 20
 
 
+// Is English? //
+
+function isEnglish () {
+    if (language.textContent === 'English') {
+        return true
+    } else {
+        return false
+    }
+}
+
+
 // Search //
 
 searchInput.addEventListener('keyup', () => {
@@ -48,7 +59,7 @@ searchInput.addEventListener('keyup', () => {
         searchResults.style.display = 'flex'
 
         let filteredWords = []
-        if (language.innerHTML === 'English') {
+        if (isEnglish()) {
             filteredWords = randomProduct.filter ( product => { 
                 return product.title.toLowerCase().startsWith(searchValue) 
             })
@@ -70,7 +81,7 @@ searchInput.addEventListener('keyup', () => {
 
 function suggestionWordsGenerator (words) {
     let wordsArray = []
-    if (language.innerHTML === 'English') {
+    if (isEnglish()) {
         wordsArray = words.map( word => {
             return `<li class="search-result" onclick="selectResult(this)">${word.title.replace(',', "'")}</li>`
         })
@@ -108,7 +119,7 @@ searchSubmit.addEventListener('click', () => {
     let inputValue = searchInput.value
     let filterProducts = []
 
-    if (language.innerHTML === 'English') {
+    if (isEnglish()) {
         filterProducts = randomProduct.filter ( product => {
             showMore.innerHTML = 'get all products'
             return product.title === inputValue.replace("'", ',')
@@ -155,7 +166,7 @@ categoryBtn.addEventListener('click', event => {
 // Mobile Navbar //
 
 burgerMenu.addEventListener('click', () => {
-    if (language.innerHTML == 'فارسی') {
+    if (!isEnglish()) {
         mobileNavbarPersian.style.right = '0'
     }
     else {
@@ -165,7 +176,7 @@ burgerMenu.addEventListener('click', () => {
 })
 
 closeNav.addEventListener('click', () => {
-    if (language.innerHTML == 'فارسی') {
+    if (!isEnglish()) {
         mobileNavbarPersian.style.right = '-95%'
     }
     else {
@@ -215,7 +226,7 @@ function showProducts () {
 // Get Products //
 
 function getProducts (data) {
-    if (language.innerHTML == 'English') {
+    if (isEnglish()) {
         productsContainer.insertAdjacentHTML('beforeend', `
             <li class="product" id="${data.id}">
                 <p class="product-title">${data.title.replace(",", "'")}</p>
@@ -226,7 +237,7 @@ function getProducts (data) {
                 <button class="add-to-cart" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price}), showToast('${data.title}')">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>                    
             </li>`)
     }
-    else if (language.innerHTML == 'فارسی') {
+    else {
         productsContainer.insertAdjacentHTML('beforeend', `
             <li class="product" id="${data.id}">
                 <p style="height:30px; font-weight:bold;" class="product-title">${data.persianTitle}</p>
@@ -245,7 +256,7 @@ function getProducts (data) {
 function getBestsellers (items) {
     for (let i = 0; i < 4; i++) {
         let data = items[i]
-        if (language.innerHTML == 'English') {
+        if (isEnglish()) {
             bestsellers.insertAdjacentHTML('beforeend', `
                 <li class="bestseller-product" id="${data.id}">
                     <p class="bestseller-title">${data.title.replace(',', `'`)}</p>
@@ -256,7 +267,7 @@ function getBestsellers (items) {
                     <button class="add-to-cart bestseller-btn" onclick="addToItems(${data.id}, '${data.title}', '${data.persianTitle}', '${data.image}', ${data.price}), showToast('${data.title}')">Add to cart <i class="add-cart-logo fa fa-shopping-cart"></i></button>              
                 </li>`)
         }
-        else if (language.innerHTML == 'فارسی') {
+        else {
             bestsellers.insertAdjacentHTML('beforeend', `
                 <li class="bestseller-product" id="${data.id}">
                     <p style="font-family: 'Segoe UI'; font-weight:bold;" class="bestseller-title">${data.persianTitle}</p>
@@ -275,7 +286,7 @@ function getBestsellers (items) {
 // Show More // 
 
 showMore.addEventListener ('click', () => {
-    if (language.textContent === 'English') {
+    if (isEnglish()) {
         showMore.innerHTML = 'show more...'
     } else {
         showMore.innerHTML = 'بیشتر...'
@@ -338,7 +349,7 @@ function showPopup (product, id, title, persianTitle, image, price) {
     popupBox.style.opacity = '1'
     popupBox.style.visibility = 'visible'
 
-    if (language.innerHTML == 'English') {
+    if (isEnglish()) {
         popupTitle.innerHTML = product.parentNode.parentNode.firstElementChild.textContent
         popupImg.src = product.src
         popupPrice.innerHTML = product.parentNode.parentNode.children[2].textContent
@@ -350,7 +361,7 @@ function showPopup (product, id, title, persianTitle, image, price) {
     
     popupBtn.addEventListener('click', () => {
         addToItems(id, title, persianTitle, image, price)
-        if (language.innerHTML === 'English') {
+        if (isEnglish()) {
             showToast(title)
         } else {
             showToast(persianTitle)
@@ -408,7 +419,12 @@ categoryTitles.forEach (category => {
 
 function showCategoryProducts (data) {
     productsContainer.innerHTML = ''
-    showMore.innerHTML = 'get all products'
+    if (isEnglish()) {
+        showMore.innerHTML = 'get all products'
+    } else {
+        showMore.innerHTML = 'نمایش تمام محصولات'
+    }
+
     window.scrollTo(250, 250)
 
     switch (data) {
@@ -477,7 +493,7 @@ function showCategoryProducts (data) {
 // Toast //
 
 function showToast (title) {
-    if (language.innerHTML == 'English') {
+    if (isEnglish()) {
         toast.style.left = '0.5rem'
         toast.style.opacity = '1'
         toastTitle.innerHTML = `${title.replace(',', "'")} added to cart`
