@@ -97,6 +97,8 @@ function getLocalData () {
 
 // Window's events //
 
+
+
 window.addEventListener('click', event => {
     if (event.target.className != 'language-display' && event.target.className != 'language-selected' && event.target.id != 'language-angle') {
         closeLanguageBox()

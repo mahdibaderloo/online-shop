@@ -54,7 +54,7 @@ searchInput.addEventListener('keyup', () => {
             })
         } else {
             filteredWords = randomProduct.filter ( product => { 
-                return product.persianTitle.toLowerCase().startsWith(searchValue) 
+                return product.persianTitle.startsWith(searchValue) 
             })
         }
         suggestionWordsGenerator(filteredWords)
@@ -106,14 +106,23 @@ function selectResult (el) {
 
 searchSubmit.addEventListener('click', () => {
     let inputValue = searchInput.value
-    let filterProducts = randomProduct.filter ( product => {
-        return product.title === inputValue.replace("'", ',')
-    })
+    let filterProducts = []
+
+    if (language.innerHTML === 'English') {
+        filterProducts = randomProduct.filter ( product => {
+            showMore.innerHTML = 'get all products'
+            return product.title === inputValue.replace("'", ',')
+        })
+    } else {
+        filterProducts = randomProduct.filter ( product => {
+            showMore.innerHTML = 'نمایش تمام محصولات'
+            return product.persianTitle === inputValue
+        })
+    }
     filterProducts.forEach (products => {
         productsContainer.innerHTML = ''
         window.scrollTo(250, 250)
         getProducts(products)
-        showMore.innerHTML = 'get all products'
     })
 })
 
