@@ -176,14 +176,17 @@ burgerMenu.addEventListener('click', () => {
 })
 
 closeNav.addEventListener('click', () => {
+    closeMobileNavbar()
+})
+
+function closeMobileNavbar () {
     if (!isEnglish()) {
         mobileNavbarPersian.style.right = '-95%'
     }
     else {
         mobileNavbar.style.left = '-81%'
     }
-
-})
+}
 
 
 // Up Button //
@@ -542,6 +545,9 @@ window.addEventListener('click', event => {
     if (NumberOfProducts === 70) {
         showMore.style.display = 'none'
         productsContainer.style.marginBottom = '2rem';
+    }
+    if (event.target.className != 'brand-mobile-nav' && event.target.className != 'mobile-navbar' && event.target.className != 'burger-menu') {
+        closeMobileNavbar()
     }
 })
 
