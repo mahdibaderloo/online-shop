@@ -694,7 +694,7 @@ body {
     border-radius: 15px;
     color: var(--dark-color);
     font-size: 20px;
-    z-index: 50;
+    /* z-index: 50; */
     transition: all 0.3s ease;
 }
 
@@ -770,7 +770,7 @@ body {
 
 .categories-section {
     margin: 4rem 0;
-    z-index: 0;
+    z-index: -1;
 }
 
 .category-section-item {
