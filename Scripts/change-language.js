@@ -5,6 +5,8 @@ const languageSelected = document.querySelector('.language-selected')
 const languageAngle = document.querySelector('.language-angle')
 const languageOptions = document.querySelector('.language-options')
 const languageLinks = document.querySelectorAll('.language-link')
+const flags = document.querySelectorAll('.flag')
+const languageButtons = document.querySelectorAll('.language')
 
 
 // Change Language With Browser Setting //
@@ -30,6 +32,7 @@ languageDisplay.addEventListener('click', () => {
     }
 })
 
+
 function openLanguageBox () {
     languageAngle.style.transform = 'rotate(180deg)'
     languageOptions.style.opacity = '1'
@@ -38,6 +41,7 @@ function openLanguageBox () {
     languageDisplay.style.borderBottomRightRadius = '0px'
     languageDisplay.style.borderBottomLeftRadius = '0px'
 }
+
 
 function selectLanguage (data) {
     let select = data
@@ -48,6 +52,7 @@ function selectLanguage (data) {
     closeLanguageBox()
 }
 
+
 function closeLanguageBox () {
     languageAngle.style.transform = 'rotate(0deg)'
     languageOptions.style.opacity = '0'
@@ -57,9 +62,28 @@ function closeLanguageBox () {
     languageDisplay.style.borderBottomLeftRadius = '12px'
 }
 
+
 languageLinks.forEach( item => {
     item.addEventListener('click', event => {
         event.preventDefault()
+        selectLanguage(event.target.dataset.language)
+    })
+})
+
+
+flags.forEach ( flag => {
+    flag.addEventListener('click', event => {
+        // event.preventDefault()
+        console.log(event.target.dataset.language)
+        selectLanguage(event.target.dataset.language)
+    })
+})
+
+
+languageButtons.forEach ( flag => {
+    flag.addEventListener('click', event => {
+        // event.preventDefault()
+        console.log(event.target.dataset.language)
         selectLanguage(event.target.dataset.language)
     })
 })
