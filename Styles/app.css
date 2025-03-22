@@ -725,6 +725,7 @@ body {
   margin-bottom: 4rem;
   cursor: pointer;
   user-select: none;
+  pointer-events: auto;
 }
 
 /********************* Categories Section ********************/
